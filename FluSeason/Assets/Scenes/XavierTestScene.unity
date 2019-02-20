@@ -216,8 +216,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fe7546d4b03a404da51225a506de0fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wanderDistance: 20
-  wanderRate: 7
+  patrolDistance: 10
+  patrolRate: 3
+  attackRange: 0
+  aggroRange: 0
 --- !u!1 &1463257397
 GameObject:
   m_ObjectHideFlags: 0

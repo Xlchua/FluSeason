@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum EnemyState {Idle, Patrolling, Following, Attacking};
+public enum EnemyState {Idle, Wandering, Following, Attacking};
 
 public class EnemyBehaviour : MonoBehaviour
 {
@@ -11,10 +11,18 @@ public class EnemyBehaviour : MonoBehaviour
     private Vector3 wanderingTo = new Vector3(0,0,0);
     private float wanderTime;
     private bool isWandering = false;
-    private EnemyState m_state = EnemyState.Patrolling;
+    private EnemyState m_state = EnemyState.Idle;
 
-    public float patrolDistance = 5f;
-    public float patrolRate = 10f;
+
+    public int baseHP;
+    public int curHP;
+    public int damage;
+    public int points;
+
+    [SerializeField] private bool isDead;
+
+    public float wanderDistance = 5f;
+    public float wanderRate = 10f;
     public float attackRange;
     public float aggroRange;
 
@@ -24,6 +32,7 @@ public class EnemyBehaviour : MonoBehaviour
     private void Awake()
     {
         origin = this.transform.position;
+        isDead = false;
         
     }
 
@@ -51,12 +60,15 @@ public class EnemyBehaviour : MonoBehaviour
         }
         */
 
-        if (m_state != EnemyState.Patrolling)
-            m_state = EnemyState.Patrolling;
+        if (m_state != EnemyState.Wandering)
+        {
+            m_state = EnemyState.Wandering;
+            SetWander();
+        }
 
         switch (m_state)
         {
-            case EnemyState.Patrolling:
+            case EnemyState.Wandering:
                 Wander();
                 break;
             case EnemyState.Following:
@@ -71,9 +83,9 @@ public class EnemyBehaviour : MonoBehaviour
 
     void Wander()
     {
-        if (Time.time > wanderTime + patrolRate)
+        if (Time.time > wanderTime + wanderRate)
         {
-            Debug.Log("wanderTime updated");
+            //Debug.Log("wanderTime updated");
             wanderTime = Time.time;
             if (!isWandering)
             {
@@ -94,7 +106,7 @@ public class EnemyBehaviour : MonoBehaviour
         //wanderingTo = new Vector3(origin.x + (Random.Range(-1.0f, 1.0f) * patrolDistance),
         //      origin.y + (Random.Range(-1.0f, 1.0f) * patrolDistance), 0);
 
-        float r = patrolDistance * Mathf.Sqrt(Random.value);
+        float r = wanderDistance * Mathf.Sqrt(Random.value);
         float theta = Mathf.PI * Random.value * 2;
 
         float randX = r * Mathf.Cos(theta);

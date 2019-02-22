@@ -109,7 +109,7 @@ MonoBehaviour:
   damage: 0
   points: 0
   isDead: 0
-  patrolDistance: 10
-  patrolRate: 3
+  wanderDistance: 10
+  wanderRate: 10
   attackRange: 0
   aggroRange: 0

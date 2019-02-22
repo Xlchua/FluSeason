@@ -26,6 +26,7 @@ public class EnemySpawner : MonoBehaviour
             simulationTime = Time.time;
             //Currently spawns in center;
             Instantiate(enemyPrefab, this.transform.position, Quaternion.identity, this.transform);
+            enemyCount++;
         }
     }
 }

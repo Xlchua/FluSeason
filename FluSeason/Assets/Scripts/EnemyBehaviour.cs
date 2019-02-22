@@ -59,53 +59,28 @@ public class EnemyBehaviour : MonoBehaviour
             m_state = EnemyState.Following;
         }
         */
-
-        if (m_state != EnemyState.Wandering)
-        {
-            m_state = EnemyState.Wandering;
-            SetWander();
-        }
-
         switch (m_state)
         {
             case EnemyState.Wandering:
-                Wander();
+                if(!isWandering)
+                    StartCoroutine(WanderCoroutine());
                 break;
             case EnemyState.Following:
                 break;
             case EnemyState.Attacking:
                 break;
             case EnemyState.Idle:
+                StartCoroutine(IdleCoroutine());
                 break;
 
         }
     }
 
-    void Wander()
+    IEnumerator WanderCoroutine()
     {
-        if (Time.time > wanderTime + wanderRate)
-        {
-            //Debug.Log("wanderTime updated");
-            wanderTime = Time.time;
-            if (!isWandering)
-            {
-                SetWander();
-            }
+        isWandering = true;
 
-        }
-        //Debug.Log(wanderingTo);
-        transform.position = Vector3.Lerp(this.transform.position, wanderingTo, Time.deltaTime);
-        if(Vector3.Distance(this.transform.position, wanderingTo) <= 1.0f)
-        {
-            isWandering = false;
-        }
-    }
-
-    void SetWander()
-    {
-        //wanderingTo = new Vector3(origin.x + (Random.Range(-1.0f, 1.0f) * patrolDistance),
-        //      origin.y + (Random.Range(-1.0f, 1.0f) * patrolDistance), 0);
-
+        //Math for uniformly random point within a circle of radius r
         float r = wanderDistance * Mathf.Sqrt(Random.value);
         float theta = Mathf.PI * Random.value * 2;
 
@@ -113,6 +88,30 @@ public class EnemyBehaviour : MonoBehaviour
         float randY = r * Mathf.Sin(theta);
 
         wanderingTo = origin + new Vector3(randX, randY);
+
+        while(Vector3.Distance(this.transform.position, wanderingTo) > 0.5f) {
+            transform.position = Vector3.Lerp(this.transform.position, wanderingTo, Time.deltaTime/2);
+            yield return null;
+        }
+        //Debug.Log(wanderingTo);
+        isWandering = false;
+        m_state = EnemyState.Idle;
+    }
+
+    IEnumerator IdleCoroutine()
+    { 
+        yield return new WaitForSeconds(3f);
+        m_state = EnemyState.Wandering;
+    }
+
+    void SetWander()
+    {
+        //wanderingTo = new Vector3(origin.x + (Random.Range(-1.0f, 1.0f) * patrolDistance),
+        //      origin.y + (Random.Range(-1.0f, 1.0f) * patrolDistance), 0);
+
+
+
+
         //wanderingTo = this.transform.position + (Vector3)(Random.insideUnitCircle * patrolDistance);
         isWandering = true;
     }

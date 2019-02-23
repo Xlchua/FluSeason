@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class SimplePlayerMove : MonoBehaviour
 {
-
     public float moveSpeed = 8f;
 
     Vector3 direction;
@@ -21,5 +20,5 @@ public class SimplePlayerMove : MonoBehaviour
         direction = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
 
         transform.Translate(direction * moveSpeed * Time.deltaTime);
-    } 
+    }
 }

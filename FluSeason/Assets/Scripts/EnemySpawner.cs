@@ -10,23 +10,52 @@ public class EnemySpawner : MonoBehaviour
     public int enemyMax;
 
     [SerializeField] private int enemyCount = 0;
-    private float simulationTime;
+    private bool isSpawning = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        simulationTime = Time.time;
+        StartSpawning();
+        //simulationTime = Time.time;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Time.time > simulationTime + spawnInterval && enemyCount < enemyMax)
+        if(enemyCount >= enemyMax)
         {
-            simulationTime = Time.time;
-            //Currently spawns in center;
-            Instantiate(enemyPrefab, this.transform.position, Quaternion.identity, this.transform);
-            enemyCount++;
+            StopSpawning();
+        }
+
+        if(enemyCount < enemyMax)
+        {
+            if (!isSpawning)
+                StartSpawning();
         }
     }
+
+    IEnumerator SpawnEnemiesCoroutine()
+    {
+        while(enemyCount < enemyMax)
+        {
+            Instantiate(enemyPrefab, this.transform.position, Quaternion.identity, this.transform);
+            enemyCount++;
+
+            yield return new WaitForSeconds(spawnInterval);
+
+        }
+    }
+
+    private void StartSpawning()
+    {
+        StartCoroutine(SpawnEnemiesCoroutine());
+        isSpawning = true;
+    }
+
+    private void StopSpawning()
+    {
+        StopCoroutine(SpawnEnemiesCoroutine());
+        isSpawning = false;
+    }
+
 }

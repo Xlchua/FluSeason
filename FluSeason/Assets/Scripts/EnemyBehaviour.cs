@@ -11,7 +11,9 @@ public class EnemyBehaviour : MonoBehaviour
     private Vector3 wanderingTo = new Vector3(0,0,0);
     private float wanderTime;
     private bool isWandering = false;
-    private EnemyState m_state = EnemyState.Idle;
+    public EnemyState m_state = EnemyState.Idle;
+
+     public Transform player;
 
 
     public int baseHP;
@@ -23,8 +25,12 @@ public class EnemyBehaviour : MonoBehaviour
 
     public float wanderDistance = 5f;
     public float wanderRate = 10f;
+    public float idleTime = 1f;
     public float attackRange;
     public float aggroRange;
+    public float moveSpeed = 5f;
+
+    public float rangeFromPlayer;
 
     //public float travelSpeed = 0.5f;
 
@@ -33,6 +39,8 @@ public class EnemyBehaviour : MonoBehaviour
     {
         origin = this.transform.position;
         isDead = false;
+
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         
     }
 
@@ -44,21 +52,27 @@ public class EnemyBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /* Player Not Implemented Yet.
 
-        float rangeFromPlayer = Vector3.Distance(player.transform.position, this.transform.position);
+        if(!player)
+            player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
 
-        if(rangeFromPlayer =< attackRange)
+        //Player Not Implemented Yet.
+
+        rangeFromPlayer = Vector3.Distance(player.position, this.transform.position);
+
+        //Debug.Log(rangeFromPlayer);
+
+        if(rangeFromPlayer <= attackRange)
         {
             m_state = EnemyState.Attacking;
-        }
-
-
-        if(rangeFromPlayer > attackRange && rangeFromPlayer <= aggroRange)
+        } 
+        else if(rangeFromPlayer > attackRange && rangeFromPlayer <= aggroRange)
         {
             m_state = EnemyState.Following;
         }
-        */
+
+        //Debug.Log(m_state);
+
         switch (m_state)
         {
             case EnemyState.Wandering:
@@ -66,10 +80,14 @@ public class EnemyBehaviour : MonoBehaviour
                     StartCoroutine(WanderCoroutine());
                 break;
             case EnemyState.Following:
+                isWandering = false;
+                StopAllCoroutines();
+                Follow();
                 break;
             case EnemyState.Attacking:
                 break;
             case EnemyState.Idle:
+                StopCoroutine(WanderCoroutine());
                 StartCoroutine(IdleCoroutine());
                 break;
 
@@ -91,6 +109,12 @@ public class EnemyBehaviour : MonoBehaviour
 
         while(Vector3.Distance(this.transform.position, wanderingTo) > 0.5f) {
             transform.position = Vector3.Lerp(this.transform.position, wanderingTo, Time.deltaTime/2);
+
+            if(rangeFromPlayer <= aggroRange)
+            {
+                m_state = EnemyState.Following;
+            }
+
             yield return null;
         }
         //Debug.Log(wanderingTo);
@@ -100,8 +124,19 @@ public class EnemyBehaviour : MonoBehaviour
 
     IEnumerator IdleCoroutine()
     { 
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(idleTime);
+        //Debug.Log("Should change from idle to wandering");
         m_state = EnemyState.Wandering;
+    }
+
+    public void Follow()
+    {
+        this.transform.position = Vector3.MoveTowards(this.transform.position, player.position, moveSpeed * Time.deltaTime);
+        //Debug.Log("Player in range");
+        if(rangeFromPlayer > aggroRange)
+        {
+            m_state = EnemyState.Idle;
+        }
     }
 
     void SetWander()

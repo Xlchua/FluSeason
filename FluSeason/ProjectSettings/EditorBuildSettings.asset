@@ -8,4 +8,10 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/StartMenu.unity
+    guid: b678722714dbfc64d82036bc0c063d30
+  - enabled: 1
+    path: Assets/Scenes/XavierTestScene.unity
+    guid: c1873d48c2fbd4bb39978cbe5896c2d8
   m_configObjects: {}

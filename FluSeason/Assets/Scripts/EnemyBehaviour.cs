@@ -12,6 +12,8 @@ public class EnemyBehaviour : MonoBehaviour
     private float wanderTime;
     private bool isWandering = false;
     private bool isAttacking = false;
+    private Rigidbody2D rb;
+
 
     public EnemyState m_state = EnemyState.Idle;
 
@@ -32,6 +34,7 @@ public class EnemyBehaviour : MonoBehaviour
     public float aggroRange;
     public float moveSpeed = 5f;
 
+    public float repelForce = 10f;
     public float rangeFromPlayer;
 
    
@@ -43,6 +46,7 @@ public class EnemyBehaviour : MonoBehaviour
         isDead = false;
 
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        rb = GetComponent<Rigidbody2D>();
         
     }
 
@@ -158,16 +162,17 @@ public class EnemyBehaviour : MonoBehaviour
         }
     }
 
-    void SetWander()
+
+    private void OnCollisionStay2D(Collision2D collision)
     {
-        //wanderingTo = new Vector3(origin.x + (Random.Range(-1.0f, 1.0f) * patrolDistance),
-        //      origin.y + (Random.Range(-1.0f, 1.0f) * patrolDistance), 0);
+        if (collision.collider.CompareTag("Enemy"))
+        {
+            Vector3 pos = rb.position - collision.rigidbody.position;
+            pos.Normalize();
+            rb.AddForce(pos * repelForce);
 
-
-
-
-        //wanderingTo = this.transform.position + (Vector3)(Random.insideUnitCircle * patrolDistance);
-        isWandering = true;
+        }
     }
+
 
 }

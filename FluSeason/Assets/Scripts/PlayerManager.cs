@@ -2,17 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
+
+public class IntUnityEvent : UnityEvent<int> {};
 
 public class PlayerManager : MonoBehaviour
 {
 
     public static PlayerManager instance;
 
-    public float currInfection = 0f;
+    public int currInfection = 0;
 
-    public float maxInfection = 100f;
+    public int maxInfection = 100;
 
-    public UnityEvent playerInfected;
+    public IntUnityEvent playerInfected = new IntUnityEvent();
 
 
     // Start is called before the first frame update
@@ -31,13 +34,14 @@ public class PlayerManager : MonoBehaviour
         
     }
 
-    public void addInfection(float infection)
+    public void addInfection(int infection)
     {
         currInfection += infection;
+        playerInfected.Invoke(currInfection);
         if (currInfection >= maxInfection)
         {
-            playerInfected.Invoke();
             Debug.Log("Player has been infected");
+            SceneManager.LoadScene("GameOver");
         }  
     }
 

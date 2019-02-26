@@ -12,8 +12,8 @@ EditorBuildSettings:
     path: Assets/Scenes/StartMenu.unity
     guid: b678722714dbfc64d82036bc0c063d30
   - enabled: 1
-    path: Assets/Scenes/AlexisScene.unity
-    guid: 2ece8e8752a860b47b2ad22a8fb2dbe9
+    path: Assets/Scenes/ShishirScene.unity
+    guid: 514202b96744e2a4cb2c2c9a039a8f68
   - enabled: 1
     path: Assets/Scenes/GameOver.unity
     guid: ea11b6b3c00f60b4093006916e0cbd77

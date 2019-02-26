@@ -20,7 +20,7 @@ public class EnemyBehaviour : MonoBehaviour
      public Transform player;
 
 
-    public int baseHP;
+    public int baseHP = 10;
     public int curHP;
     public int damage;
     public int points;
@@ -47,6 +47,7 @@ public class EnemyBehaviour : MonoBehaviour
 
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         rb = GetComponent<Rigidbody>();
+        curHP = baseHP;
         
     }
 
@@ -61,10 +62,11 @@ public class EnemyBehaviour : MonoBehaviour
 
         if(!player)
             player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
-
-        //Player Not Implemented Yet.
-
+            
         rangeFromPlayer = Vector3.Distance(player.position, this.transform.position);
+
+        if (curHP <= 0)
+            Destroy(this.gameObject);
 
         //Debug.Log(rangeFromPlayer);
 
@@ -185,5 +187,6 @@ public class EnemyBehaviour : MonoBehaviour
     {
         print("DIE");
         curHP--;
+        Destroy(other.gameObject);
     }
 }

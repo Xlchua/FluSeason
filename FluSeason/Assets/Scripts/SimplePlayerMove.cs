@@ -15,13 +15,13 @@ public class SimplePlayerMove : MonoBehaviour
 
     private IEnumerator fireCoroutine;
 
-    private Rigidbody2D rb;
+    private Rigidbody rb;
 
     Vector3 direction;
 
     private void Awake()
     {
-        rb = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody>();
         fireCoroutine = FireCoroutine();
     }
 

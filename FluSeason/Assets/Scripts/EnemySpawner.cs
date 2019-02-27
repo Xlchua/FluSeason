@@ -12,6 +12,13 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private int enemyCount = 0;
     private bool isSpawning = false;
 
+    private IEnumerator spawnEnemiesCoroutine;
+
+    void Awake()
+    {
+        spawnEnemiesCoroutine = SpawnEnemiesCoroutine();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,7 +34,7 @@ public class EnemySpawner : MonoBehaviour
             StopSpawning();
         }
 
-        if(enemyCount < enemyMax)
+        else if(enemyCount < enemyMax)
         {
             if (!isSpawning)
                 StartSpawning();
@@ -48,13 +55,13 @@ public class EnemySpawner : MonoBehaviour
 
     private void StartSpawning()
     {
-        StartCoroutine(SpawnEnemiesCoroutine());
+        StartCoroutine(spawnEnemiesCoroutine);
         isSpawning = true;
     }
 
     private void StopSpawning()
     {
-        StopCoroutine(SpawnEnemiesCoroutine());
+        StopCoroutine(spawnEnemiesCoroutine);
         isSpawning = false;
     }
 

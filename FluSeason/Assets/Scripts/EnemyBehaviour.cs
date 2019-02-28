@@ -162,6 +162,8 @@ public class EnemyBehaviour : MonoBehaviour
             PlayerManager.instance.addInfection(damage);
             yield return new WaitForSeconds(5f);
         }
+
+        isAttacking = false;
     }
 
 
@@ -188,5 +190,10 @@ public class EnemyBehaviour : MonoBehaviour
         print("DIE");
         curHP--;
         Destroy(other.gameObject);
+
+        if(curHP <= 0) {
+            EnemySpawner.instance.DecrementEnemyCount();
+            Destroy(this.gameObject);
+        }
     }
 }

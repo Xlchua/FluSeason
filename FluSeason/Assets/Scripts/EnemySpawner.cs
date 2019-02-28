@@ -5,6 +5,8 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
 
+    public static EnemySpawner instance;
+
     public GameObject enemyPrefab;
     public float spawnInterval;
     public int enemyMax;
@@ -16,6 +18,9 @@ public class EnemySpawner : MonoBehaviour
 
     void Awake()
     {
+        if (instance == null)
+            instance = this;
+
         spawnEnemiesCoroutine = SpawnEnemiesCoroutine();
     }
 
@@ -63,6 +68,11 @@ public class EnemySpawner : MonoBehaviour
     {
         StopCoroutine(spawnEnemiesCoroutine);
         isSpawning = false;
+    }
+
+    public void DecrementEnemyCount()
+    {
+        enemyCount--;
     }
 
 }

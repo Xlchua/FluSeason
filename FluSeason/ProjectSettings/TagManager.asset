@@ -6,6 +6,10 @@ TagManager:
   tags:
   - Enemy
   - Bullet
+  - FastSingleUpgrade
+  - SpreadUpgrade
+  - StreamUpgrade
+  - OPUpgrade
   layers:
   - Default
   - TransparentFX

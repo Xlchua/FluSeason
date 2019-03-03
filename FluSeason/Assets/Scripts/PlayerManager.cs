@@ -40,6 +40,7 @@ public class PlayerManager : MonoBehaviour
         playerInfected.Invoke(currInfection);
         if (currInfection >= maxInfection)
         {
+            playerInfected.Invoke(maxInfection);
             Debug.Log("Player has been infected");
             SceneManager.LoadScene("GameOver");
         }  

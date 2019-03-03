@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public enum EnemyState {Idle, Wandering, Following, Attacking};
 
@@ -17,11 +18,11 @@ public class EnemyBehaviour : MonoBehaviour
 
     public EnemyState m_state = EnemyState.Idle;
 
-     public Transform player;
+    public Transform player;
 
 
-    public int baseHP = 10;
-    public int curHP;
+    public float baseHP = 10f;
+    public float curHP;
     public int damage;
     public int points;
 
@@ -37,7 +38,7 @@ public class EnemyBehaviour : MonoBehaviour
     public float repelForce = 10f;
     public float rangeFromPlayer;
 
-   
+    public Image healthBar;
 
     // Start is called before the first frame update
     private void Awake()
@@ -189,6 +190,8 @@ public class EnemyBehaviour : MonoBehaviour
     {
         print("DIE");
         curHP--;
+        healthBar.fillAmount = curHP / baseHP;
+
         Destroy(other.gameObject);
 
         if(curHP <= 0) {

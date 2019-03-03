@@ -1,0 +1,509 @@
+fileFormatVersion: 2
+guid: 2bebec77ecad7486fa866fc987274bd2
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: ICS 161 Sprites_0
+    21300002: ICS 161 Sprites_1
+    21300004: ICS 161 Sprites_2
+    21300006: ICS 161 Sprites_3
+    21300008: ICS 161 Sprites_4
+    21300010: ICS 161 Sprites_5
+    21300012: ICS 161 Sprites_6
+    21300014: ICS 161 Sprites_7
+    21300016: ICS 161 Sprites_8
+    21300018: ICS 161 Sprites_9
+    21300020: ICS 161 Sprites_10
+    21300022: ICS 161 Sprites_11
+    21300024: ICS 161 Sprites_12
+    21300026: ICS 161 Sprites_13
+    21300028: ICS 161 Sprites_14
+    21300030: ICS 161 Sprites_15
+    21300032: ICS 161 Sprites_16
+    21300034: ICS 161 Sprites_17
+    21300036: ICS 161 Sprites_18
+    21300038: ICS 161 Sprites_19
+    21300040: ICS 161 Sprites_20
+    21300042: ICS 161 Sprites_21
+    21300044: ICS 161 Sprites_22
+    21300046: ICS 161 Sprites_23
+    21300048: ICS 161 Sprites_24
+    21300050: ICS 161 Sprites_25
+    21300052: ICS 161 Sprites_26
+    21300054: ICS 161 Sprites_27
+    21300056: ICS 161 Sprites_28
+    21300058: ICS 161 Sprites_29
+    21300060: ICS 161 Sprites_30
+    21300062: ICS 161 Sprites_31
+    21300064: ICS 161 Sprites_32
+    21300066: ICS 161 Sprites_33
+    21300068: ICS 161 Sprites_34
+    21300070: ICS 161 Sprites_35
+    21300072: ICS 161 Sprites_36
+    21300074: ICS 161 Sprites_37
+    21300076: ICS 161 Sprites_38
+  externalObjects: {}
+  serializedVersion: 9
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ICS 161 Sprites_0
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 989
+        width: 350
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 863f9230ead7c4fa697e50cd222e2613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ICS 161 Sprites_3
+      rect:
+        serializedVersion: 2
+        x: 988
+        y: 844
+        width: 220
+        height: 213
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c77ffbc4d0874439abeff94077d23506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ICS 161 Sprites_4
+      rect:
+        serializedVersion: 2
+        x: 1284
+        y: 963
+        width: 136
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d171a6ea802b454b8b17bfc9bdc7191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ICS 161 Sprites_5
+      rect:
+        serializedVersion: 2
+        x: 1459
+        y: 948
+        width: 157
+        height: 101
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5358f80e04a1456990d5b8fce6d4b1f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ICS 161 Sprites_6
+      rect:
+        serializedVersion: 2
+        x: 724
+        y: 855
+        width: 185
+        height: 154
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bfee17fb36c3e49a5afddcc9e8012da4
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ICS 161 Sprites_8
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 896
+        width: 348
+        height: 82
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 498b85901361043b1969d2df1467b9cf
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ICS 161 Sprites_9
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 810
+        width: 348
+        height: 73
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7124e8856ddbd45f18dc26d5825095ae
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ICS 161 Sprites_18
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 717
+        width: 348
+        height: 84
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd0694be5a91846c2a4978ffabdd16ed
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ICS 161 Sprites_19
+      rect:
+        serializedVersion: 2
+        x: 959
+        y: 594
+        width: 275
+        height: 206
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65af187812165408ab5aac744e41a216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ICS 161 Sprites_21
+      rect:
+        serializedVersion: 2
+        x: 1295
+        y: 584
+        width: 220
+        height: 213
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bb253388210e4fb2b8190f4bde0d4a9
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ICS 161 Sprites_22
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 626
+        width: 348
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e3c81253c9594456bd35581d95f7d5a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ICS 161 Sprites_23
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 537
+        width: 348
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5be2ed628379c4fb48a18eb3225017dd
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ICS 161 Sprites_30
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 441
+        width: 348
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 145a53a36c9454ecfb34be966fa4ab66
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ICS 161 Sprites_31
+      rect:
+        serializedVersion: 2
+        x: 1179
+        y: 342
+        width: 206
+        height: 213
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 159d78d7e14d44eaaa93ac5ebc3edd05
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ICS 161 Sprites_32
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 352
+        width: 348
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc1efd2513e7a40f4bbb0eda172b17af
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ICS 161 Sprites_35
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 256
+        width: 348
+        height: 82
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8403befd85b54f1b946c86f6120bb59
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ICS 161 Sprites_37
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 168
+        width: 348
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d8b4ab323bb44416ac345e91a5214cd
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ICS 161 Sprites_38
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 68
+        width: 348
+        height: 85
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2fe51737c225482f8e3cea8e73cfb41
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: a9d1a7fd59bda458cb9eea5f949dd4c6
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -31,15 +31,15 @@ public class GameManagement : MonoBehaviour
     void Update()
     {
         //Every 10 seconds new wave. A little janky because timeElapsed is a float so regular modulus doesn't work
-        if (timeElapsed >= waveAddition)
-            UpdateWave();
+        //if (timeElapsed >= waveAddition)
+            //UpdateWave();
 
         timeElapsed += Time.deltaTime;
         timer_meshProUGUI.text = string.Format("Timer: {0:0.00}", timeElapsed);
 
     }
 
-    void UpdateWave()
+    public void UpdateWave()
     {
         wave += 1;
         waveAddition += waveIncrement;

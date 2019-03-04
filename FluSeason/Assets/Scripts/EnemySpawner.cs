@@ -9,10 +9,12 @@ public class EnemySpawner : MonoBehaviour
 
     public GameObject enemyPrefab;
     public float spawnInterval;
-    public int enemyMax;
+    public int enemyMax = 50;
+    public int enemiesIncreasePerWave = 10;
 
     [SerializeField] private int enemyCount = 0;
-    private bool isSpawning = false;
+    [SerializeField] private int enemyCurrent = 0;
+    [SerializeField] private bool isSpawning = false;
 
     private IEnumerator spawnEnemiesCoroutine;
 
@@ -22,18 +24,20 @@ public class EnemySpawner : MonoBehaviour
             instance = this;
 
         spawnEnemiesCoroutine = SpawnEnemiesCoroutine();
+        enemyMax = 50;
     }
 
     // Start is called before the first frame update
     void Start()
     {
+        GameManagement.instance.UpdateWave();
         StartSpawning();
         //simulationTime = Time.time;
     }
 
     // Update is called once per frame
     void Update()
-    {
+    {/*
         if(enemyCount >= enemyMax)
         {
             StopSpawning();
@@ -43,36 +47,53 @@ public class EnemySpawner : MonoBehaviour
         {
             if (!isSpawning)
                 StartSpawning();
+        }*/
+
+        if(!isSpawning)
+        {
+            //Wave has ended.
+
+            GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+            Debug.Log(enemies.Length);
+            if(enemies.Length <= 0)
+            {
+                StopSpawning();
+                GameManagement.instance.UpdateWave();
+                enemyMax += enemiesIncreasePerWave;
+                StartSpawning();
+            }
+            //StartSpawning();
         }
     }
 
     IEnumerator SpawnEnemiesCoroutine()
     {
-        while(enemyCount < enemyMax)
-        {
-            Instantiate(enemyPrefab, this.transform.position, Quaternion.identity, this.transform);
-            enemyCount++;
+        for(int i = 0; i < enemyMax; i++)
+        { 
+            int rand = Random.Range(1, 5);
+            var whereToSpawn = this.transform.GetChild(rand);
 
+            enemyCount++;
+            //enemyCurrent++;
+            Instantiate(enemyPrefab, whereToSpawn.position, Quaternion.identity, whereToSpawn);
+      
             yield return new WaitForSeconds(spawnInterval);
 
         }
+        isSpawning = false;
+
     }
 
     private void StartSpawning()
     {
-        StartCoroutine(spawnEnemiesCoroutine);
+        StartCoroutine(SpawnEnemiesCoroutine());
         isSpawning = true;
     }
 
     private void StopSpawning()
     {
         StopCoroutine(spawnEnemiesCoroutine);
-        isSpawning = false;
-    }
-
-    public void DecrementEnemyCount()
-    {
-        enemyCount--;
+        enemyCount = 0;
     }
 
 }

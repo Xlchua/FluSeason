@@ -42,43 +42,43 @@ public class Infection : MonoBehaviour
     void currInfectionListener(int infection)
     {
         //infectionText.text = string.Format("Infection: {000}%", infection);
-        if (infection == 10)
+        if (infection <= 10)
         {
             imageComponet.sprite = one;
         }
-        else if (infection == 20)
+        else if (infection <= 20 && infection > 10)
         {
             imageComponet.sprite = two;
         }
-        else if (infection == 30)
+        else if (infection <= 30 && infection > 20)
         {
             imageComponet.sprite = three;
         }
-        else if (infection == 40)
+        else if (infection <= 40 && infection > 30)
         {
             imageComponet.sprite = four;
         }
-        else if (infection == 50)
+        else if (infection <= 50 && infection > 40)
         {
             imageComponet.sprite = five;
         }
-        else if (infection == 60)
+        else if (infection <= 60 && infection > 50)
         {
             imageComponet.sprite = six;
         }
-        else if (infection == 70)
+        else if (infection <= 70 && infection > 60)
         {
             imageComponet.sprite = seven;
         }
-        else if (infection == 80)
+        else if (infection <= 80 && infection > 70)
         {
             imageComponet.sprite = eight;
         }
-        else if (infection == 90)
+        else if (infection <= 90 && infection > 80)
         {
             imageComponet.sprite = nine;
         }
-        else if (infection == 100)
+        else if (infection <= 100 && infection > 90)
         {
             imageComponet.sprite = ten;
         }

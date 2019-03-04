@@ -72,15 +72,22 @@ public class EnemyBehaviour : MonoBehaviour
         //Debug.Log(rangeFromPlayer);
         // COMMENT HERE TO THE NEXT INDICATED COMMENT TO DISABLE ENEMY MOVEMENT FOR TESTING
 
-        if(rangeFromPlayer <= attackRange)
+        if(rangeFromPlayer >= attackRange)
         {
-            m_state = EnemyState.Attacking;
+            //Enemy not in attack range. Enemy follows
+            isAttacking = false;
+            Follow();
         } 
-        else if(rangeFromPlayer > attackRange && rangeFromPlayer <= aggroRange)
+        else
         {
-            m_state = EnemyState.Following;
+            //Enemy in attack range. Enemy attacks
+            if(!isAttacking)
+            {
+                StartCoroutine(AttackCoroutine(rangeFromPlayer));
+            }
         }
 
+        /*
         Debug.Log(m_state);
 
         switch (m_state)
@@ -108,7 +115,7 @@ public class EnemyBehaviour : MonoBehaviour
                 break;
 
         }
-
+        */
         // COMMENT HERE TO THE NEXT INDICATED COMMENT TO DISABLE ENEMY MOVEMENT FOR TESTING
     }
 
@@ -151,10 +158,10 @@ public class EnemyBehaviour : MonoBehaviour
     {
         this.transform.position = Vector3.MoveTowards(this.transform.position, player.position, moveSpeed * Time.deltaTime);
         //Debug.Log("Player in range");
-        if(rangeFromPlayer > aggroRange)
+        /*if(rangeFromPlayer > aggroRange)
         {
             m_state = EnemyState.Idle;
-        }
+        }*/
     }
 
     IEnumerator AttackCoroutine(float range)
@@ -164,7 +171,7 @@ public class EnemyBehaviour : MonoBehaviour
         if(range < attackRange)
         {
             PlayerManager.instance.addInfection(damage);
-            yield return new WaitForSeconds(5f);
+            yield return new WaitForSeconds(3f);
         }
 
         isAttacking = false;

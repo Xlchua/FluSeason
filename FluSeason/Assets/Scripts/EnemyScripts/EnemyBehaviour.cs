@@ -13,7 +13,7 @@ public class EnemyBehaviour : MonoBehaviour
     private float wanderTime;
     private bool isWandering = false;
     private bool isAttacking = false;
-    private Rigidbody rb;
+    protected Rigidbody rb;
 
 
     public EnemyState m_state = EnemyState.Idle;
@@ -26,7 +26,6 @@ public class EnemyBehaviour : MonoBehaviour
     public int damage;
     public int points;
 
-    [SerializeField] private bool isDead;
 
     public float wanderDistance = 5f;
     public float wanderRate = 10f;
@@ -44,7 +43,6 @@ public class EnemyBehaviour : MonoBehaviour
     private void Awake()
     {
         origin = this.transform.position;
-        isDead = false;
 
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         rb = GetComponent<Rigidbody>();
@@ -87,7 +85,7 @@ public class EnemyBehaviour : MonoBehaviour
             }
         }
 
-        /*
+
         Debug.Log(m_state);
 
         switch (m_state)
@@ -115,7 +113,7 @@ public class EnemyBehaviour : MonoBehaviour
                 break;
 
         }
-        */
+
         // COMMENT HERE TO THE NEXT INDICATED COMMENT TO DISABLE ENEMY MOVEMENT FOR TESTING
     }
 
@@ -200,7 +198,7 @@ public class EnemyBehaviour : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter(Collider other)
+    protected virtual void OnTriggerEnter(Collider other)
     {
         print("DIE");
         curHP -= other.gameObject.GetComponent<AbstractDamage>().damage;

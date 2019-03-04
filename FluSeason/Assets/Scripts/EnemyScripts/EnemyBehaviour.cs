@@ -156,6 +156,10 @@ public class EnemyBehaviour : MonoBehaviour
 
     public void Follow()
     {
+        float angle = Mathf.Atan2(player.position.y - this.transform.position.y, player.position.x - this.transform.position.x) * Mathf.Rad2Deg;
+
+        this.transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, angle));
+
         this.transform.position = Vector3.MoveTowards(this.transform.position, player.position, moveSpeed * Time.deltaTime);
         //Debug.Log("Player in range");
         /*if(rangeFromPlayer > aggroRange)

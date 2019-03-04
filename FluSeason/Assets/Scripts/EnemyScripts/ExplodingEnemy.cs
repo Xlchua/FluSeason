@@ -29,5 +29,6 @@ public class ExplodingEnemy : EnemyBehaviour
         }
     }
 
+    // TODO: explosion needs to affect the player as well
     
 }

@@ -2,24 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FastBulletMovement : MonoBehaviour
+public class FastBullet : AbstractDamage
 {
-    private float bulletSpeed = 40f;
+    //private float bulletSpeed = 40f;
 
     private Rigidbody rb;
 
-    void Awake()
+    protected override void Awake()
     {
         rb = GetComponent<Rigidbody>();
     }
 
     // Start is called before the first frame update
-    void Start()
+    protected override void Start()
     {
-        rb.velocity = transform.right * bulletSpeed;
+        rb.velocity = transform.right * speed;
     }
 
-    void Update()
+    protected override void Update()
     {
         Destroy(this.gameObject, 2);
     }

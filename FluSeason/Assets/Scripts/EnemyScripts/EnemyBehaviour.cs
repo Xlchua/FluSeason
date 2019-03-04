@@ -71,7 +71,7 @@ public class EnemyBehaviour : MonoBehaviour
 
         //Debug.Log(rangeFromPlayer);
         // COMMENT HERE TO THE NEXT INDICATED COMMENT TO DISABLE ENEMY MOVEMENT FOR TESTING
-        
+
         if(rangeFromPlayer <= attackRange)
         {
             m_state = EnemyState.Attacking;
@@ -108,6 +108,7 @@ public class EnemyBehaviour : MonoBehaviour
                 break;
 
         }
+
         // COMMENT HERE TO THE NEXT INDICATED COMMENT TO DISABLE ENEMY MOVEMENT FOR TESTING
     }
 

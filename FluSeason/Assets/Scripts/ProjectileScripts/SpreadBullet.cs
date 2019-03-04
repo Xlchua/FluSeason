@@ -2,25 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpreadBulletMovement : MonoBehaviour
+public class SpreadBullet : AbstractDamage
 {
-    private float bulletSpeed = 25f;
+    //private float bulletSpeed = 25f;
 
     private Rigidbody rb;
 
-    void Awake()
+    protected override void Awake()
     {
         rb = GetComponent<Rigidbody>();
     }
 
     // Start is called before the first frame update
-    void Start()
+    protected override void Start()
     {
         Vector3 direction = Quaternion.AngleAxis(Random.Range(-30, 30), Vector3.forward) * transform.right;
-        rb.velocity = direction * bulletSpeed;
+        rb.velocity = direction * speed;
     }
 
-    void Update()
+    protected override void Update()
     {
         Destroy(this.gameObject, 2);
     }

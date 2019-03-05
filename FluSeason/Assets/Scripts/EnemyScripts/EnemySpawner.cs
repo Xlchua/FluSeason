@@ -25,6 +25,7 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private int enemyCount = 0;
     [SerializeField] private int enemyCurrent = 0;
     [SerializeField] private bool isSpawning = false;
+    private Transform centerSpawn;
 
     private IEnumerator spawnEnemiesCoroutine;
 
@@ -35,6 +36,7 @@ public class EnemySpawner : MonoBehaviour
 
         spawnEnemiesCoroutine = SpawnEnemiesCoroutine();
         enemyMax = 25;
+        centerSpawn = this.transform.GetChild(0);
     }
 
     // Start is called before the first frame update
@@ -70,6 +72,8 @@ public class EnemySpawner : MonoBehaviour
                 StopSpawning();
                 GameManagement.instance.UpdateWave();
                 enemyMax += enemiesIncreasePerWave;
+
+                Instantiate(upgrades[Random.Range(0, upgrades.Count)], centerSpawn.position, Quaternion.identity);
                 StartSpawning();
             }
             //StartSpawning();

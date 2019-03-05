@@ -346,12 +346,12 @@ MonoBehaviour:
   player: {fileID: 0}
   baseHP: 10
   curHP: 0
-  damage: 3
+  damage: 6
   points: 0
   wanderDistance: 10
   wanderRate: 10
   idleTime: 1.5
-  attackRange: 2
+  attackRange: 5
   aggroRange: 12
   moveSpeed: 5
   repelForce: 1

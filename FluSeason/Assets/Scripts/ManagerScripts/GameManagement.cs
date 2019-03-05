@@ -46,4 +46,9 @@ public class GameManagement : MonoBehaviour
         wave_meshProUGUI.text = string.Format("Wave: {0:0}", wave);
         //Do things that happen after a new wave starts
     }
+
+    public int GetWave()
+    {
+        return wave;
+    }
 }

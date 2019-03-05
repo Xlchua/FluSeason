@@ -201,5 +201,26 @@ MonoBehaviour:
   enemyPrefab: {fileID: 7203807645139615242, guid: 5225da6ad6f7743a4bbc7ea2f71a80e9,
     type: 3}
   spawnInterval: 4
-  enemyMax: 50
+  enemyMax: 25
+  enemiesIncreasePerWave: 10
+  TierOnePrefabs:
+  - {fileID: 7203807645139615242, guid: 5225da6ad6f7743a4bbc7ea2f71a80e9, type: 3}
+  TierTwoPrefabs:
+  - {fileID: 7203807645139615242, guid: 5225da6ad6f7743a4bbc7ea2f71a80e9, type: 3}
+  - {fileID: 7203807645139615242, guid: a7a57174238ced34e886a8941aee3507, type: 3}
+  TierThreePrefabs:
+  - {fileID: 7203807645139615242, guid: a7a57174238ced34e886a8941aee3507, type: 3}
+  - {fileID: 7203807645139615242, guid: 5225da6ad6f7743a4bbc7ea2f71a80e9, type: 3}
+  - {fileID: 7203807645139615242, guid: d7552c73dbb28b046bb4864ea93fc2a0, type: 3}
+  TierFourPrefabs:
+  - {fileID: 7203807645139615242, guid: 5225da6ad6f7743a4bbc7ea2f71a80e9, type: 3}
+  - {fileID: 7203807645139615242, guid: d7552c73dbb28b046bb4864ea93fc2a0, type: 3}
+  - {fileID: 7203807645139615242, guid: 5791982a956fb7a41b52a7c371392205, type: 3}
+  - {fileID: 7203807645139615242, guid: a7a57174238ced34e886a8941aee3507, type: 3}
+  TierFivePrefabs:
+  - {fileID: 7203807645139615242, guid: d7552c73dbb28b046bb4864ea93fc2a0, type: 3}
+  - {fileID: 7203807645139615242, guid: 5791982a956fb7a41b52a7c371392205, type: 3}
+  - {fileID: 7203807645139615242, guid: a7a57174238ced34e886a8941aee3507, type: 3}
   enemyCount: 0
+  enemyCurrent: 0
+  isSpawning: 0

@@ -85,71 +85,7 @@ public class EnemyBehaviour : MonoBehaviour
             }
         }
 
-
-        Debug.Log(m_state);
-
-        switch (m_state)
-        {
-            case EnemyState.Wandering:
-                isAttacking = false;
-                if (!isWandering)
-                    StartCoroutine(WanderCoroutine());
-                break;
-            case EnemyState.Following:
-                isWandering = false;
-                isAttacking = false;
-                StopAllCoroutines();
-                Follow();
-                break;
-            case EnemyState.Attacking:
-                StopAllCoroutines();
-                if(!isAttacking)
-                    StartCoroutine(AttackCoroutine(rangeFromPlayer));
-                break;
-            case EnemyState.Idle:
-                isAttacking = false;
-                StopCoroutine(WanderCoroutine());
-                StartCoroutine(IdleCoroutine());
-                break;
-
-        }
-
         // COMMENT HERE TO THE NEXT INDICATED COMMENT TO DISABLE ENEMY MOVEMENT FOR TESTING
-    }
-
-    IEnumerator WanderCoroutine()
-    {
-        isWandering = true;
-
-        //Math for uniformly random point within a circle of radius r
-        float r = wanderDistance * Mathf.Sqrt(Random.value);
-        float theta = Mathf.PI * Random.value * 2;
-
-        float randX = r * Mathf.Cos(theta);
-        float randY = r * Mathf.Sin(theta);
-
-        wanderingTo = origin + new Vector3(randX, randY);
-
-        while(Vector3.Distance(this.transform.position, wanderingTo) > 0.5f) {
-            transform.position = Vector3.Lerp(this.transform.position, wanderingTo, Time.deltaTime/2);
-
-            if(rangeFromPlayer <= aggroRange)
-            {
-                m_state = EnemyState.Following;
-            }
-
-            yield return null;
-        }
-        //Debug.Log(wanderingTo);
-        isWandering = false;
-        m_state = EnemyState.Idle;
-    }
-
-    IEnumerator IdleCoroutine()
-    { 
-        yield return new WaitForSeconds(idleTime);
-        //Debug.Log("Should change from idle to wandering");
-        m_state = EnemyState.Wandering;
     }
 
     public void Follow()
@@ -159,11 +95,6 @@ public class EnemyBehaviour : MonoBehaviour
         this.transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, angle));
 
         this.transform.position = Vector3.MoveTowards(this.transform.position, player.position, moveSpeed * Time.deltaTime);
-        //Debug.Log("Player in range");
-        /*if(rangeFromPlayer > aggroRange)
-        {
-            m_state = EnemyState.Idle;
-        }*/
     }
 
     IEnumerator AttackCoroutine(float range)

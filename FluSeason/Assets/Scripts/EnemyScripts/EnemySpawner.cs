@@ -9,8 +9,18 @@ public class EnemySpawner : MonoBehaviour
 
     public GameObject enemyPrefab;
     public float spawnInterval;
-    public int enemyMax = 50;
+    public int enemyMax = 25;
     public int enemiesIncreasePerWave = 10;
+
+    [Header("Enemy Tiers")]
+    public List<GameObject> TierOnePrefabs;
+    public List<GameObject> TierTwoPrefabs;
+    public List<GameObject> TierThreePrefabs;
+    public List<GameObject> TierFourPrefabs;
+    public List<GameObject> TierFivePrefabs;
+    public List<GameObject> upgrades;
+
+    public List<GameObject> currentTier;
 
     [SerializeField] private int enemyCount = 0;
     [SerializeField] private int enemyCurrent = 0;
@@ -24,7 +34,7 @@ public class EnemySpawner : MonoBehaviour
             instance = this;
 
         spawnEnemiesCoroutine = SpawnEnemiesCoroutine();
-        enemyMax = 50;
+        enemyMax = 25;
     }
 
     // Start is called before the first frame update
@@ -68,14 +78,49 @@ public class EnemySpawner : MonoBehaviour
 
     IEnumerator SpawnEnemiesCoroutine()
     {
-        for(int i = 0; i < enemyMax; i++)
+        int wave = GameManagement.instance.GetWave();
+        Debug.Log(wave);
+
+        switch(wave)
+        {
+            case 1:
+            case 2:
+            case 3:
+                {
+                    currentTier = TierOnePrefabs;
+                    break;
+                }
+            case 4:
+            case 5:
+                {
+                    currentTier = TierTwoPrefabs;
+                    break;
+                }
+            case 6:
+            case 7:
+                {
+                    currentTier = TierThreePrefabs;
+                    break;
+                }
+            case 8:
+            case 9:
+                {
+                    currentTier = TierFourPrefabs;
+                    break;
+                }
+            default:
+                currentTier = TierFivePrefabs;
+                break;
+        }
+
+        for (int i = 0; i < enemyMax; i++)
         { 
             int rand = Random.Range(1, 5);
             var whereToSpawn = this.transform.GetChild(rand);
 
             enemyCount++;
             //enemyCurrent++;
-            Instantiate(enemyPrefab, whereToSpawn.position, Quaternion.identity, whereToSpawn);
+            Instantiate(currentTier[Random.Range(0, currentTier.Count)], whereToSpawn.position, Quaternion.identity, whereToSpawn);
       
             yield return new WaitForSeconds(spawnInterval);
 

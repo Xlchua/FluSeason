@@ -141,7 +141,6 @@ public class SimplePlayerMove : MonoBehaviour
                 //Spread of bullets
                 case "SpreadBullet":
                     Instantiate(SpreadBullet, this.transform.position, this.transform.rotation);
-                    Debug.Log("Spreading");
                     break;
 
                 //Dual Stream??

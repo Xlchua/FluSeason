@@ -10,7 +10,7 @@ public class EnemySpawner : MonoBehaviour
 
     public GameObject enemyPrefab;
     public float spawnInterval;
-    public int enemyMax = 25;
+    public int enemyMax;
     public int enemiesRemaining;
     public int enemiesIncreasePerWave = 10;
 
@@ -41,7 +41,7 @@ public class EnemySpawner : MonoBehaviour
             instance = this;
 
         spawnEnemiesCoroutine = SpawnEnemiesCoroutine();
-        enemyMax = enemiesRemaining = 25;
+        enemiesRemaining = enemyMax;
         centerSpawn = this.transform.GetChild(0);
     }
 
@@ -98,11 +98,11 @@ public class EnemySpawner : MonoBehaviour
         {
             case 1:
             case 2:
-            case 3:
                 {
                     currentTier = TierOnePrefabs;
                     break;
                 }
+            case 3:
             case 4:
             case 5:
                 {

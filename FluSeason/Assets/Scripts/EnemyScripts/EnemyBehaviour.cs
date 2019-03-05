@@ -114,14 +114,14 @@ public class EnemyBehaviour : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         Debug.Log(collision.gameObject.name);
-        if (collision.collider.CompareTag("Enemy"))
+        /*if (collision.collider.CompareTag("Enemy"))
         {
 
             Vector3 pos = rb.position - collision.rigidbody.position;
             pos.Normalize();
             rb.AddForce(pos * repelForce);
 
-        }
+        }*/
 
         if (collision.collider.CompareTag("Bullet"))
         {

@@ -17,6 +17,9 @@ public class PlayerManager : MonoBehaviour
 
     public IntUnityEvent playerInfected = new IntUnityEvent();
 
+    //Audio Purposes
+    public AudioClip GOAudio;
+
 
     // Start is called before the first frame update
     void Start()
@@ -42,6 +45,11 @@ public class PlayerManager : MonoBehaviour
         {
             playerInfected.Invoke(maxInfection);
             Debug.Log("Player has been infected");
+
+            //Audio Purposes
+            AudioManager.instance.PlaySingle(GOAudio);
+            AudioManager.instance.musicSource.Stop();
+
             SceneManager.LoadScene("GameOver");
         }  
     }

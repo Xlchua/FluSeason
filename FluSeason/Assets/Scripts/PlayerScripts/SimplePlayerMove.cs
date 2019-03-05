@@ -24,6 +24,9 @@ public class SimplePlayerMove : MonoBehaviour
 
     Vector3 direction;
 
+    //Audio Purposes
+    public AudioClip BB_sound;
+
     //Used for stream bullet
     private float interval = 1.4f;
     private float x1, x2;    
@@ -131,6 +134,7 @@ public class SimplePlayerMove : MonoBehaviour
                 //Default Bullet
                 case "BasicBullet":
                     Instantiate(BasicBullet, this.transform.position, this.transform.rotation);
+                    AudioManager.instance.PlaySingle(BB_sound);
                     break;
 
                 //Fast single bullet

@@ -221,6 +221,11 @@ MonoBehaviour:
   - {fileID: 7203807645139615242, guid: d7552c73dbb28b046bb4864ea93fc2a0, type: 3}
   - {fileID: 7203807645139615242, guid: 5791982a956fb7a41b52a7c371392205, type: 3}
   - {fileID: 7203807645139615242, guid: a7a57174238ced34e886a8941aee3507, type: 3}
+  upgrades:
+  - {fileID: 402854684032837471, guid: dd6e7e0c9d6419646a0387be620fd171, type: 3}
+  - {fileID: 4169253523415925360, guid: 89b14666903b2514f8b1e409a1d0a725, type: 3}
+  - {fileID: 1461724335241025828, guid: a3f0b6499aad26e4dbaa2c3a8549243b, type: 3}
+  currentTier: []
   enemyCount: 0
   enemyCurrent: 0
   isSpawning: 0

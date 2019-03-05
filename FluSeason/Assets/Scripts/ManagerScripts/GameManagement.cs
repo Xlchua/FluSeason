@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GameManagement : MonoBehaviour
 {
@@ -25,6 +26,10 @@ public class GameManagement : MonoBehaviour
     {
         if (instance == null)
             instance = this;
+        else
+            Destroy(this.gameObject);
+
+        DontDestroyOnLoad(this.gameObject);
     }
 
     // Update is called once per frame
@@ -43,6 +48,7 @@ public class GameManagement : MonoBehaviour
     {
         wave += 1;
         waveAddition += waveIncrement;
+
         wave_meshProUGUI.text = string.Format("Wave: {0:0}", wave);
         //Do things that happen after a new wave starts
     }

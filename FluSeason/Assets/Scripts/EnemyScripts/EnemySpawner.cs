@@ -11,6 +11,7 @@ public class EnemySpawner : MonoBehaviour
     public GameObject enemyPrefab;
     public float spawnInterval;
     public int enemyMax = 25;
+    public int enemiesRemaining;
     public int enemiesIncreasePerWave = 10;
 
     [Header("Enemy Tiers")]
@@ -28,9 +29,11 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private bool isSpawning = false;
     private Transform centerSpawn;
 
+    
+
     private IEnumerator spawnEnemiesCoroutine;
 
-    public IntUnityEvent enemyLeft = new IntUnityEvent();
+    //public IntUnityEvent enemyLeft = new IntUnityEvent();
 
     void Awake()
     {
@@ -38,7 +41,7 @@ public class EnemySpawner : MonoBehaviour
             instance = this;
 
         spawnEnemiesCoroutine = SpawnEnemiesCoroutine();
-        enemyMax = 25;
+        enemyMax = enemiesRemaining = 25;
         centerSpawn = this.transform.GetChild(0);
     }
 
@@ -52,7 +55,9 @@ public class EnemySpawner : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {/*
+    {
+        GameManagement.instance.UpdateCount(enemiesRemaining);
+        /*
         if(enemyCount >= enemyMax)
         {
             StopSpawning();
@@ -64,18 +69,18 @@ public class EnemySpawner : MonoBehaviour
                 StartSpawning();
         }*/
 
-        if(!isSpawning)
+        if (!isSpawning)
         {
             //Wave has ended.
 
             GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
-            Debug.Log(enemies.Length);
-            enemyLeft.Invoke(enemies.Length);
+            
             if(enemies.Length <= 0)
             {
                 StopSpawning();
                 GameManagement.instance.UpdateWave();
                 enemyMax += enemiesIncreasePerWave;
+                enemiesRemaining = enemyMax;
 
                 Instantiate(upgrades[Random.Range(0, upgrades.Count)], centerSpawn.position, Quaternion.identity);
                 StartSpawning();

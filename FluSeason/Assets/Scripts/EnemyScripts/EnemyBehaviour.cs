@@ -142,6 +142,7 @@ public class EnemyBehaviour : MonoBehaviour
             if (curHP <= 0)
             {
                 //EnemySpawner.instance.DecrementEnemyCount();
+                EnemySpawner.instance.enemiesRemaining -= 1;
                 Destroy(this.gameObject);
             }
         }

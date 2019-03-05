@@ -37,9 +37,7 @@ public class GameManagement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        enemyComponent = GameObject.Find("EnemySpawner");
-
-        enemyComponent.GetComponent<EnemySpawner>().enemyLeft.AddListener(updateCount);
+        //enemyComponent.GetComponent<EnemySpawner>().enemyLeft.AddListener(updateCount);
         //Every 10 seconds new wave. A little janky because timeElapsed is a float so regular modulus doesn't work
         //if (timeElapsed >= waveAddition)
         //UpdateWave();
@@ -49,7 +47,7 @@ public class GameManagement : MonoBehaviour
 
     }
 
-    public void updateCount(int length)
+    public void UpdateCount(int length)
     {
         timer_meshProUGUI.text = string.Format("Enemies Left: {0:0}", length);
     }

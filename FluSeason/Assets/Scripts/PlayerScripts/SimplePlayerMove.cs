@@ -208,7 +208,7 @@ public class SimplePlayerMove : MonoBehaviour
         if (collider.CompareTag("StreamUpgrade"))
         {
             bulletType = "StreamBullet";
-            bulletSpawnInterval = 0.05f;
+            bulletSpawnInterval = 0.035f;
             Destroy(collider.gameObject);
         }
 

@@ -131,15 +131,20 @@ public class EnemyBehaviour : MonoBehaviour
 
     protected virtual void OnTriggerEnter(Collider other)
     {
-        print("DIE");
-        curHP -= other.gameObject.GetComponent<AbstractDamage>().damage;
-        healthBar.fillAmount = curHP / baseHP;
+        if(other.CompareTag("Bullet"))
+        {
+            print("DIE");
+            curHP -= other.gameObject.GetComponent<AbstractDamage>().damage;
+            healthBar.fillAmount = curHP / baseHP;
 
-        Destroy(other.gameObject);
+            Destroy(other.gameObject);
 
-        if(curHP <= 0) {
-            //EnemySpawner.instance.DecrementEnemyCount();
-            Destroy(this.gameObject);
+            if (curHP <= 0)
+            {
+                //EnemySpawner.instance.DecrementEnemyCount();
+                Destroy(this.gameObject);
+            }
         }
+        
     }
 }

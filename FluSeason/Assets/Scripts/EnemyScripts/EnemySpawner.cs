@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class EnemySpawner : MonoBehaviour
 {
@@ -28,6 +29,8 @@ public class EnemySpawner : MonoBehaviour
     private Transform centerSpawn;
 
     private IEnumerator spawnEnemiesCoroutine;
+
+    public IntUnityEvent enemyLeft = new IntUnityEvent();
 
     void Awake()
     {
@@ -67,6 +70,7 @@ public class EnemySpawner : MonoBehaviour
 
             GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
             Debug.Log(enemies.Length);
+            enemyLeft.Invoke(enemies.Length);
             if(enemies.Length <= 0)
             {
                 StopSpawning();

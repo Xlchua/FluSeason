@@ -227,5 +227,12 @@ public class SimplePlayerMove : MonoBehaviour
             Destroy(collider.gameObject);
         }
 
+        if(collider.CompareTag("EnemyBullet"))
+        {
+            int v = collider.GetComponent<Explosion>().getDamage();
+            PlayerManager.instance.addInfection(v);
+            Destroy(collider.gameObject);
+        }
+
     }
 }

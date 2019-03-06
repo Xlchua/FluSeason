@@ -10,6 +10,7 @@ TagManager:
   - SpreadUpgrade
   - StreamUpgrade
   - OPUpgrade
+  - EnemyBullet
   layers:
   - Default
   - TransparentFX

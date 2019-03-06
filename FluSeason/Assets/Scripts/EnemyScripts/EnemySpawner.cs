@@ -69,6 +69,14 @@ public class EnemySpawner : MonoBehaviour
                 StartSpawning();
         }*/
 
+        for(int i = 1; i < 5; i++)
+        {
+            Transform spawnPoint = this.transform.GetChild(i);
+            //Debug.Log(spawnPoint.name);
+            spawnPoint.RotateAround(centerSpawn.position, Vector3.back, Time.deltaTime * 20);
+            //Debug.Log(spawnPoint.position);
+        }
+
         if (!isSpawning)
         {
             //Wave has ended.
@@ -142,7 +150,7 @@ public class EnemySpawner : MonoBehaviour
 
             enemyCount++;
             //enemyCurrent++;
-            Instantiate(currentTier[Random.Range(0, currentTier.Count)], whereToSpawn.position, Quaternion.identity, whereToSpawn);
+            Instantiate(currentTier[Random.Range(0, currentTier.Count)], whereToSpawn.position, Quaternion.identity);
       
             yield return new WaitForSeconds(spawnInterval);
 

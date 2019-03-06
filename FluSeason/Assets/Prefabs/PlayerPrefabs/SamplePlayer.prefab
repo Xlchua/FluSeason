@@ -177,9 +177,11 @@ MonoBehaviour:
   bulletSpawnInterval: 0.25
   BasicBullet: {fileID: 1744692278438997160, guid: cbd441aa36ce09242a0a9bffb6775108,
     type: 3}
-  FastSingleBullet: {fileID: 0}
+  FastSingleBullet: {fileID: 5711337829711712585, guid: 2f23827bfd7058a478f22e0e4094de2c,
+    type: 3}
   SpreadBullet: {fileID: 506748711855695818, guid: 519b93a49a0e9bb42b1e4d43ea766ae9,
     type: 3}
+  BB_sound: {fileID: 8300000, guid: 32697926f539040f592bb5159b278436, type: 3}
 --- !u!54 &1157273764469421867
 Rigidbody:
   m_ObjectHideFlags: 0

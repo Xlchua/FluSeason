@@ -134,7 +134,6 @@ public class SimplePlayerMove : MonoBehaviour
                 //Default Bullet
                 case "BasicBullet":
                     Instantiate(BasicBullet, this.transform.position, this.transform.rotation);
-                    AudioManager.instance.PlaySingle(BB_sound);
                     break;
 
                 //Fast single bullet
@@ -187,7 +186,7 @@ public class SimplePlayerMove : MonoBehaviour
                     UpdateInterval();
                     break;
             }
-
+            AudioManager.instance.GetComponent<AudioSource>().PlayOneShot(BB_sound, 0.1f);
             yield return new WaitForSeconds(bulletSpawnInterval);
 
         }

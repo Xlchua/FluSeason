@@ -5,7 +5,6 @@ using UnityEngine;
 public class SpeedyEnemy : EnemyBehaviour {
 
     public float enemySlidingInterval = 2f;
-    private bool isDead = false;
 
     private void FixedUpdate()
     {
@@ -24,7 +23,9 @@ public class SpeedyEnemy : EnemyBehaviour {
         print("about to die");
 
         yield return new WaitForSeconds(enemySlidingInterval);
-        EnemySpawner.instance.enemiesRemaining -= 1;
+        if (!isDead)
+            EnemySpawner.instance.enemiesRemaining--;
+        isDead = true;
         Instantiate(deathEffect, transform.position, Quaternion.identity);
         Destroy(this.gameObject);
         print("ded");

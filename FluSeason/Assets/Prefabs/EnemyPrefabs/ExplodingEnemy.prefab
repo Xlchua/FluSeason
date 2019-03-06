@@ -342,7 +342,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c95bcb67f97377e4eae1e0f607f15735, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_state: 0
   player: {fileID: 0}
   deathEffect: {fileID: 2763419318518311979, guid: 2b4fe20ba1083bc40958fc51a489e7eb,
     type: 3}
@@ -350,9 +349,8 @@ MonoBehaviour:
   curHP: 0
   damage: 3
   points: 0
-  wanderDistance: 5
-  wanderRate: 10
-  idleTime: 1
+  attackTimer: 0
+  attackCooldown: 1
   attackRange: 2
   aggroRange: 0
   moveSpeed: 5

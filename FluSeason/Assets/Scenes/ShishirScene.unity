@@ -813,7 +813,7 @@ PrefabInstance:
     - target: {fileID: 8382337201957235115, guid: da4a6eb41855c4f57bffab6fa9ea624e,
         type: 3}
       propertyPath: enemyMax
-      value: 10
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8382337201957235115, guid: da4a6eb41855c4f57bffab6fa9ea624e,
         type: 3}

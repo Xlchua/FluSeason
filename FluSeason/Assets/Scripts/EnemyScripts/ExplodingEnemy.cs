@@ -28,21 +28,26 @@ public class ExplodingEnemy : EnemyBehaviour
         yield return new WaitForSeconds(explosionSpawnInterval);
     }
 
-    void OnTriggerEnter(Collider other)
+    protected override void OnTriggerEnter(Collider other)
     {
-        print("DIE");
-        curHP -= other.gameObject.GetComponent<AbstractDamage>().damage;
-        healthBar.fillAmount = curHP / baseHP;
-
-        Destroy(other.gameObject);
-
-        if (curHP <= 0)
+        if (other.CompareTag("Bullet") || other.CompareTag("EnemyBullet"))
         {
-            //EnemySpawner.instance.DecrementEnemyCount();
-            Explode();
-            EnemySpawner.instance.enemiesRemaining -= 1;
-            Instantiate(deathEffect, transform.position, Quaternion.identity);
-            Destroy(this.gameObject);
+            //print("DIE");
+            curHP -= other.gameObject.GetComponent<AbstractDamage>().damage;
+            healthBar.fillAmount = curHP / baseHP;
+
+            Destroy(other.gameObject);
+
+            if (curHP <= 0)
+            {
+                //EnemySpawner.instance.DecrementEnemyCount();
+                Explode();
+                if (!isDead)
+                    EnemySpawner.instance.enemiesRemaining--;
+                isDead = true;
+                Instantiate(deathEffect, transform.position, Quaternion.identity);
+                Destroy(this.gameObject);
+            }
         }
     }
 

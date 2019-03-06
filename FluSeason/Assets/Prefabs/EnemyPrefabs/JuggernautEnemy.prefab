@@ -362,7 +362,8 @@ MonoBehaviour:
   curHP: 0
   damage: 9
   points: 0
-  idleTime: 1.5
+  attackTimer: 0
+  attackCooldown: 1
   attackRange: 5
   aggroRange: 12
   moveSpeed: 5

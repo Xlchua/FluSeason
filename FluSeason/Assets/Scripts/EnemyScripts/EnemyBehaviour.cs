@@ -10,6 +10,8 @@ public class EnemyBehaviour : MonoBehaviour
     private bool isAttacking = false;
     protected Rigidbody rb;
 
+    protected bool isDead = false;
+
     public Transform player;
 
     public GameObject deathEffect;
@@ -22,7 +24,7 @@ public class EnemyBehaviour : MonoBehaviour
 
     public float attackTimer;
 
-    public float attackCooldown = 3f;
+    public float attackCooldown;
     public float attackRange;
     public float aggroRange;
     public float moveSpeed = 5f;
@@ -93,11 +95,11 @@ public class EnemyBehaviour : MonoBehaviour
     {
         isAttacking = true;
 
-        if (range < attackRange && Time.time > attackTimer + attackCooldown)
+        if (Time.time > attackTimer + attackCooldown)
         {
             attackTimer = Time.time;
             PlayerManager.instance.addInfection(damage);
-            yield return new WaitForSeconds(1.5f);
+            yield return new WaitForSeconds(1f);
         }
 
         isAttacking = false;
@@ -126,7 +128,7 @@ public class EnemyBehaviour : MonoBehaviour
     {
         if(other.CompareTag("Bullet") || other.CompareTag("EnemyBullet"))
         {
-            print("DIE");
+            //print("DIE");
             curHP -= other.gameObject.GetComponent<AbstractDamage>().damage;
             healthBar.fillAmount = curHP / baseHP;
 
@@ -135,7 +137,9 @@ public class EnemyBehaviour : MonoBehaviour
             if (curHP <= 0)
             {
                 //EnemySpawner.instance.DecrementEnemyCount();
-                EnemySpawner.instance.enemiesRemaining -= 1;
+                if(!isDead)
+                    EnemySpawner.instance.enemiesRemaining--;
+                isDead = true;
                 Instantiate(deathEffect, transform.position, Quaternion.identity);
                 Destroy(this.gameObject);
             }

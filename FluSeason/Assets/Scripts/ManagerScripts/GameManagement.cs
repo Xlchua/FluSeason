@@ -19,6 +19,8 @@ public class GameManagement : MonoBehaviour
 
     private int waveIncrement = 10;
 
+    private bool upgradeSpawned = false;
+
     GameObject enemyComponent;
 
     // Start is called before the first frame update
@@ -62,5 +64,15 @@ public class GameManagement : MonoBehaviour
     public int GetWave()
     {
         return wave;
+    }
+
+    public void toggleUpgradeSpawned()
+    {
+        upgradeSpawned = !upgradeSpawned;
+    }
+
+    public bool isUpgradeSpawned()
+    {
+        return upgradeSpawned;
     }
 }

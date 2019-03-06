@@ -26,6 +26,8 @@ public class SimplePlayerMove : MonoBehaviour
 
     Vector3 direction;
 
+    Transform upgradePointer;
+
     //Audio Purposes
     public AudioClip BB_sound;
 
@@ -40,6 +42,11 @@ public class SimplePlayerMove : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         fireCoroutine = FireCoroutine();
         audioSource = GetComponent<AudioSource>();
+
+        upgradePointer = this.transform.GetChild(0);
+        upgradePointer.gameObject.SetActive(false);
+
+        
     }
 
     // Start is called before the first frame update
@@ -51,6 +58,12 @@ public class SimplePlayerMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (GameManagement.instance.isUpgradeSpawned())
+        {
+            upgradePointer.gameObject.SetActive(true);
+        }
+
+
         direction = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
 
         Look();
@@ -201,6 +214,7 @@ public class SimplePlayerMove : MonoBehaviour
     {
         if (collider.CompareTag("FastSingleUpgrade"))
         {
+            GameManagement.instance.toggleUpgradeSpawned();
             bulletType = "FastSingleBullet";
             bulletSpawnInterval = 0.115f;
             Destroy(collider.gameObject);
@@ -208,6 +222,7 @@ public class SimplePlayerMove : MonoBehaviour
 
         if(collider.CompareTag("SpreadUpgrade"))
         {
+            GameManagement.instance.toggleUpgradeSpawned();
             bulletType = "SpreadBullet";
             bulletSpawnInterval = 0.05f;
             Destroy(collider.gameObject);
@@ -215,6 +230,7 @@ public class SimplePlayerMove : MonoBehaviour
 
         if (collider.CompareTag("StreamUpgrade"))
         {
+            GameManagement.instance.toggleUpgradeSpawned();
             bulletType = "StreamBullet";
             bulletSpawnInterval = 0.035f;
             Destroy(collider.gameObject);
@@ -222,6 +238,7 @@ public class SimplePlayerMove : MonoBehaviour
 
         if (collider.CompareTag("OPUpgrade"))
         {
+            GameManagement.instance.toggleUpgradeSpawned();
             bulletType = "OPBullet";
             bulletSpawnInterval = 0.05f;
             Destroy(collider.gameObject);

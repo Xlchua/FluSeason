@@ -93,7 +93,11 @@ public class EnemySpawner : MonoBehaviour
                 int wave = GameManagement.instance.GetWave();
 
                 if(upgradeToSpawn <= 3)
+                {
                     Instantiate(upgrades[upgradeToSpawn], centerSpawn.position, Quaternion.identity);
+                    GameManagement.instance.toggleUpgradeSpawned(); //should set to true
+                }
+
                 
                 StartSpawning();
             }

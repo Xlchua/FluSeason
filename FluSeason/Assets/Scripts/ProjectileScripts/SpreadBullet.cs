@@ -8,6 +8,8 @@ public class SpreadBullet : AbstractDamage
 
     private Rigidbody rb;
 
+    public int angle;
+
     protected override void Awake()
     {
         rb = GetComponent<Rigidbody>();
@@ -16,7 +18,7 @@ public class SpreadBullet : AbstractDamage
     // Start is called before the first frame update
     protected override void Start()
     {
-        Vector3 direction = Quaternion.AngleAxis(Random.Range(-30, 30), Vector3.forward) * transform.right;
+        Vector3 direction = Quaternion.AngleAxis(Random.Range(-angle, angle), Vector3.forward) * transform.right;
         rb.velocity = direction * speed;
     }
 

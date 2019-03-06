@@ -129,6 +129,8 @@ public class EnemySpawner : MonoBehaviour
                 }
             default:
                 currentTier = TierFivePrefabs;
+                if (spawnInterval > 0.55f)
+                    spawnInterval -= 0.1f;
                 upgradeToSpawn = 4;
                 break;
         }

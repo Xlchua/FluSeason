@@ -48,6 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 30
   damage: 1
+  angle: 25
 --- !u!54 &5884660425661702122
 Rigidbody:
   m_ObjectHideFlags: 0

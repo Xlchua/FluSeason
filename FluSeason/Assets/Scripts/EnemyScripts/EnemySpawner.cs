@@ -29,7 +29,7 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private bool isSpawning = false;
     private Transform centerSpawn;
 
-    
+    private int upgradeToSpawn = 0;
 
     private IEnumerator spawnEnemiesCoroutine;
 
@@ -82,7 +82,11 @@ public class EnemySpawner : MonoBehaviour
                 enemyMax += enemiesIncreasePerWave;
                 enemiesRemaining = enemyMax;
 
-                Instantiate(upgrades[Random.Range(0, upgrades.Count)], centerSpawn.position, Quaternion.identity);
+                int wave = GameManagement.instance.GetWave();
+
+                if(upgradeToSpawn <= 3)
+                    Instantiate(upgrades[upgradeToSpawn], centerSpawn.position, Quaternion.identity);
+                
                 StartSpawning();
             }
             //StartSpawning();
@@ -92,37 +96,40 @@ public class EnemySpawner : MonoBehaviour
     IEnumerator SpawnEnemiesCoroutine()
     {
         int wave = GameManagement.instance.GetWave();
-        Debug.Log(wave);
 
         switch(wave)
         {
             case 1:
-            case 2:
                 {
                     currentTier = TierOnePrefabs;
+                    spawnInterval -= 0.3f;
+                    upgradeToSpawn = 0;
+                    break;
+                }
+            case 2:
+                {
+                    currentTier = currentTier = TierTwoPrefabs;
+                    spawnInterval -= 0.3f;
+                    upgradeToSpawn = 1;
                     break;
                 }
             case 3:
-            case 4:
-            case 5:
-                {
-                    currentTier = TierTwoPrefabs;
-                    break;
-                }
-            case 6:
-            case 7:
                 {
                     currentTier = TierThreePrefabs;
+                    spawnInterval -= 0.3f;
+                    upgradeToSpawn = 2;
                     break;
                 }
-            case 8:
-            case 9:
+            case 4:
                 {
                     currentTier = TierFourPrefabs;
+                    spawnInterval -= 0.2f;
+                    upgradeToSpawn = 3;
                     break;
                 }
             default:
                 currentTier = TierFivePrefabs;
+                upgradeToSpawn = 4;
                 break;
         }
 

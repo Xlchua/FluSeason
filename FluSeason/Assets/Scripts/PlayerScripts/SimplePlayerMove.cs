@@ -20,6 +20,8 @@ public class SimplePlayerMove : MonoBehaviour
 
     private Rigidbody rb;
 
+    private AudioSource audioSource;
+
     private string bulletType = "BasicBullet";
 
     Vector3 direction;
@@ -37,6 +39,7 @@ public class SimplePlayerMove : MonoBehaviour
         x2 = -interval;
         rb = GetComponent<Rigidbody>();
         fireCoroutine = FireCoroutine();
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Start is called before the first frame update
@@ -88,22 +91,19 @@ public class SimplePlayerMove : MonoBehaviour
         mousePos.Scale(new Vector3(1, 1, 0));
 
         Vector3[] endpoints = new Vector3[2] { new Vector3(this.transform.position.x, this.transform.position.y), mousePos };
-        line.startWidth = 0.4f;
-        line.endWidth = 0.4f;
+        line.startWidth = line.endWidth = 0.2f;
         line.SetPositions(endpoints);
     }
 
     void StartShooting()
     {
         StartCoroutine(fireCoroutine);
-        Debug.Log("Starting Shooting");
         isBulletSpawning = true;
     }
 
     void StopShooting()
     {
         StopCoroutine(fireCoroutine);
-        Debug.Log("Stopping Shooting");
         isBulletSpawning = false;
     }
 
@@ -186,10 +186,15 @@ public class SimplePlayerMove : MonoBehaviour
                     UpdateInterval();
                     break;
             }
-            AudioManager.instance.GetComponent<AudioSource>().PlayOneShot(BB_sound, 0.1f);
+            PlayGunshot();
             yield return new WaitForSeconds(bulletSpawnInterval);
 
         }
+    }
+
+    private void PlayGunshot()
+    {
+        audioSource.PlayOneShot(BB_sound, 0.05f);
     }
 
     private void OnTriggerEnter(Collider collider)

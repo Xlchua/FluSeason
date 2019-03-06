@@ -25,6 +25,8 @@ public class ExplodingEnemy : EnemyBehaviour
         {
             //EnemySpawner.instance.DecrementEnemyCount();
             StartCoroutine(ExplodeCoroutine());
+            EnemySpawner.instance.enemiesRemaining -= 1;
+            Instantiate(deathEffect, transform.position, Quaternion.identity);
             Destroy(this.gameObject);
         }
     }

@@ -9,7 +9,12 @@ public class StartButton : MonoBehaviour
 
     public void PlayGame()
     {
-        AudioManager.instance.PlaySingle(sbSound);
+        //AudioManager.instance.PlaySingle(sbSound);
+        GameObject [] destroyList = GameObject.FindGameObjectsWithTag("GameController");
+        if (destroyList != null)
+            foreach (GameObject g in destroyList)
+                Destroy(g);
+
         SceneManager.LoadScene("ShishirScene");
     }
 }

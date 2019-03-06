@@ -357,6 +357,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_state: 0
   player: {fileID: 0}
+  deathEffect: {fileID: 2763419318518311979, guid: 2b4fe20ba1083bc40958fc51a489e7eb,
+    type: 3}
   baseHP: 5
   curHP: 0
   damage: 3

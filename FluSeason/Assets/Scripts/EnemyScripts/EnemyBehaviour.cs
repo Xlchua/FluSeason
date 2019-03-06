@@ -20,6 +20,8 @@ public class EnemyBehaviour : MonoBehaviour
 
     public Transform player;
 
+    public GameObject deathEffect;
+
 
     public float baseHP = 10f;
     public float curHP;
@@ -113,7 +115,7 @@ public class EnemyBehaviour : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log(collision.gameObject.name);
+        //Debug.Log(collision.gameObject.name);
         /*if (collision.collider.CompareTag("Enemy"))
         {
 
@@ -123,10 +125,10 @@ public class EnemyBehaviour : MonoBehaviour
 
         }*/
 
-        if (collision.collider.CompareTag("Bullet"))
-        {
-            Debug.Log("DIE");
-        }
+        //if (collision.collider.CompareTag("Bullet"))
+        //{
+        //    Debug.Log("DIE");
+        //}
     }
 
     protected virtual void OnTriggerEnter(Collider other)
@@ -143,6 +145,7 @@ public class EnemyBehaviour : MonoBehaviour
             {
                 //EnemySpawner.instance.DecrementEnemyCount();
                 EnemySpawner.instance.enemiesRemaining -= 1;
+                Instantiate(deathEffect, transform.position, Quaternion.identity);
                 Destroy(this.gameObject);
             }
         }

@@ -7,15 +7,13 @@ using UnityEngine.SceneManagement;
 
 public class GameManagement : MonoBehaviour
 {
-    public float timeElapsed = 0f;
-
-    public int wave = 10000;
+    public int wave = 1;
 
     public static GameManagement instance;
 
     public TextMeshProUGUI wave_meshProUGUI;
 
-    public TextMeshProUGUI timer_meshProUGUI;
+    public TextMeshProUGUI enemyCount_meshProUGUI;
 
     private int waveAddition = 0;
 
@@ -49,7 +47,7 @@ public class GameManagement : MonoBehaviour
 
     public void UpdateCount(int length)
     {
-        timer_meshProUGUI.text = string.Format("Enemies Left: {0:0}", length);
+        enemyCount_meshProUGUI.text = string.Format("Enemies Left: {0:0}", length);
     }
 
     public void UpdateWave()

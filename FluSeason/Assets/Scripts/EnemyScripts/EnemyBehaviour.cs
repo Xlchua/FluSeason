@@ -7,16 +7,8 @@ public enum EnemyState {Idle, Wandering, Following, Attacking};
 
 public class EnemyBehaviour : MonoBehaviour
 {
-
-    private Vector3 origin = new Vector3(0,0,0);
-    private Vector3 wanderingTo = new Vector3(0,0,0);
-    private float wanderTime;
-    private bool isWandering = false;
     private bool isAttacking = false;
     protected Rigidbody rb;
-
-
-    public EnemyState m_state = EnemyState.Idle;
 
     public Transform player;
 
@@ -28,10 +20,9 @@ public class EnemyBehaviour : MonoBehaviour
     public int damage;
     public int points;
 
+    public float attackTimer;
 
-    public float wanderDistance = 5f;
-    public float wanderRate = 10f;
-    public float idleTime = 1f;
+    public float attackCooldown = 3f;
     public float attackRange;
     public float aggroRange;
     public float moveSpeed = 5f;
@@ -44,17 +35,16 @@ public class EnemyBehaviour : MonoBehaviour
     // Start is called before the first frame update
     private void Awake()
     {
-        origin = this.transform.position;
-
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         rb = GetComponent<Rigidbody>();
         curHP = baseHP;
+        attackTimer = Time.time;
         
     }
 
     void Start()
     {
-        wanderTime = Time.time;
+
     }
 
     // Update is called once per frame
@@ -103,10 +93,11 @@ public class EnemyBehaviour : MonoBehaviour
     {
         isAttacking = true;
 
-        if(range < attackRange)
+        if (range < attackRange && Time.time > attackTimer + attackCooldown)
         {
+            attackTimer = Time.time;
             PlayerManager.instance.addInfection(damage);
-            yield return new WaitForSeconds(3f);
+            yield return new WaitForSeconds(1.5f);
         }
 
         isAttacking = false;
@@ -133,7 +124,7 @@ public class EnemyBehaviour : MonoBehaviour
 
     protected virtual void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Bullet"))
+        if(other.CompareTag("Bullet") || other.CompareTag("EnemyBullet"))
         {
             print("DIE");
             curHP -= other.gameObject.GetComponent<AbstractDamage>().damage;

@@ -20,8 +20,9 @@ public class EnemyBehaviour : MonoBehaviour
     public int damage;
     public int points;
 
+    public float attackTimer;
 
-    public float idleTime = 1f;
+    public float attackCooldown = 3f;
     public float attackRange;
     public float aggroRange;
     public float moveSpeed = 5f;
@@ -37,6 +38,7 @@ public class EnemyBehaviour : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         rb = GetComponent<Rigidbody>();
         curHP = baseHP;
+        attackTimer = Time.time;
         
     }
 
@@ -91,8 +93,9 @@ public class EnemyBehaviour : MonoBehaviour
     {
         isAttacking = true;
 
-        if(range < attackRange)
+        if (range < attackRange && Time.time > attackTimer + attackCooldown)
         {
+            attackTimer = Time.time;
             PlayerManager.instance.addInfection(damage);
             yield return new WaitForSeconds(1.5f);
         }

@@ -358,14 +358,14 @@ MonoBehaviour:
   player: {fileID: 0}
   deathEffect: {fileID: 2763419318518311979, guid: 2b4fe20ba1083bc40958fc51a489e7eb,
     type: 3}
-  baseHP: 10
+  baseHP: 4
   curHP: 0
   damage: 2
   points: 0
   idleTime: 1
   attackRange: 2
   aggroRange: 0
-  moveSpeed: 8
+  moveSpeed: 13
   repelForce: 10
   rangeFromPlayer: 0
   healthBar: {fileID: 6175762580467899510}

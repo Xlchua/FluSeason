@@ -86,11 +86,9 @@ public class EnemySpawner : MonoBehaviour
             if(enemies.Length <= 0)
             {
                 StopSpawning();
-                GameManagement.instance.UpdateWave();
+                
                 enemyMax += enemiesIncreasePerWave;
                 enemiesRemaining = enemyMax;
-
-                int wave = GameManagement.instance.GetWave();
 
                 if(upgradeToSpawn <= 3)
                 {
@@ -98,8 +96,7 @@ public class EnemySpawner : MonoBehaviour
                     GameManagement.instance.toggleUpgradeSpawned(); //should set to true
                 }
 
-                
-                StartSpawning();
+                GameManagement.instance.UpdateWave();
             }
             //StartSpawning();
         }
@@ -163,7 +160,7 @@ public class EnemySpawner : MonoBehaviour
 
     }
 
-    private void StartSpawning()
+    public void StartSpawning()
     {
         StartCoroutine(SpawnEnemiesCoroutine());
         isSpawning = true;

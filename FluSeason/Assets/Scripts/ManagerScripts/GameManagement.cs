@@ -9,17 +9,27 @@ public class GameManagement : MonoBehaviour
 {
     public int wave = 1;
 
+    public int restTime = 5;
+
     public static GameManagement instance;
 
     public TextMeshProUGUI wave_meshProUGUI;
 
     public TextMeshProUGUI enemyCount_meshProUGUI;
 
+    public TextMeshProUGUI nextWaveTimer_meshProUGUI;
+
+    public GameObject textManager;
+
     private int waveAddition = 0;
 
     private int waveIncrement = 10;
 
     private bool upgradeSpawned = false;
+
+    private IEnumerator countdownCoroutine;
+
+    private AnimatorScript animatorScript;
 
     GameObject enemyComponent;
 
@@ -32,6 +42,9 @@ public class GameManagement : MonoBehaviour
             Destroy(this.gameObject);
 
         DontDestroyOnLoad(this.gameObject);
+
+        countdownCoroutine = CountdownCoroutine();
+
     }
 
     // Update is called once per frame
@@ -57,8 +70,44 @@ public class GameManagement : MonoBehaviour
         wave += 1;
         waveAddition += waveIncrement;
 
-        wave_meshProUGUI.text = string.Format("Wave: {0:0}", wave);
         //Do things that happen after a new wave starts
+        wave_meshProUGUI.text = string.Format("Wave: {0:0}", wave);
+
+        //In between wave text handling
+        if(wave > 1)
+        {
+            //Disable enemy spawner
+            EnemySpawner.instance.gameObject.SetActive(false);
+
+            //Handle Animation
+            AnimatorScript.instance.StartAnimation();
+
+            //Handle Countdown
+            StartCoroutine("CountdownCoroutine");    
+        }
+        
+
+    }
+
+    IEnumerator CountdownCoroutine()
+    {
+        nextWaveTimer_meshProUGUI.gameObject.SetActive(true);
+        for (int i = restTime; i > 0; --i)
+        {
+            nextWaveTimer_meshProUGUI.text = string.Format("Next Wave Starts In: {0}", i);
+            yield return new WaitForSeconds(1f);
+        }
+
+        AnimatorScript.instance.StopAnimation();
+        StopCountDown();
+    }
+
+    private void StopCountDown()
+    {
+        StopCoroutine("CountdownCoroutine");
+        nextWaveTimer_meshProUGUI.gameObject.SetActive(false);
+        EnemySpawner.instance.gameObject.SetActive(true);
+        EnemySpawner.instance.StartSpawning();
     }
 
     public int GetWave()

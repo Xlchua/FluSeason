@@ -216,12 +216,12 @@ public class SimplePlayerMove : MonoBehaviour
         if (collision.gameObject.CompareTag("Wall"))
         {
             rb.constraints = RigidbodyConstraints.FreezePositionZ;
-            this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, -.5f);
+            this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y);
         }
         if (collision.gameObject.CompareTag("Ground"))
         {
             rb.constraints = RigidbodyConstraints.FreezePositionZ;
-            this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, -.5f);
+            this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y);
         }
     }
 
@@ -230,13 +230,13 @@ public class SimplePlayerMove : MonoBehaviour
         if (collision.gameObject.CompareTag("Wall"))
         {
             rb.constraints = RigidbodyConstraints.FreezePositionZ;
-            this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, -.5f);
+            this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y);
         }
         if (collision.gameObject.CompareTag("Ground"))
         {
 
             rb.constraints = RigidbodyConstraints.FreezePositionZ;
-            this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, -.5f);
+            this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y);
         }
     }
 

@@ -65,7 +65,7 @@ public class SimplePlayerMove : MonoBehaviour
         }
 
 
-        direction = new Vector3(Input.GetAxis("Horizontal") * 2, Input.GetAxis("Vertical") * 2, .1f);
+        direction = new Vector3(Input.GetAxis("Horizontal") * 2, Input.GetAxis("Vertical") * 2);
 
         Look();
         //transform.Translate(direction * moveSpeed * Time.deltaTime);

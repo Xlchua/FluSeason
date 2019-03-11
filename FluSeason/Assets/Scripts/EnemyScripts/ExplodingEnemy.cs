@@ -45,7 +45,8 @@ public class ExplodingEnemy : EnemyBehaviour
                 if (!isDead)
                     EnemySpawner.instance.enemiesRemaining--;
                 isDead = true;
-                Instantiate(deathEffect, transform.position, Quaternion.identity);
+                GameObject deathParticle = Instantiate(deathEffect, transform.position, Quaternion.identity);
+                Destroy(deathParticle, 1f);
                 Destroy(this.gameObject);
             }
         }

@@ -563,10 +563,10 @@ RectTransform:
   m_Father: {fileID: 1610175110687866011}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -229.67, y: 212.02}
-  m_SizeDelta: {x: 255.27, y: 34.55}
+  m_AnchorMin: {x: 0.048750002, y: 0.952}
+  m_AnchorMax: {x: 0.048750002, y: 0.952}
+  m_AnchoredPosition: {x: 131.33, y: -13.979996}
+  m_SizeDelta: {x: 255.27002, y: 34.55}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &9072420639402255196
 CanvasRenderer:
@@ -940,16 +940,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5698236360033545197}
     m_Modifications:
-    - target: {fileID: 5059177257197975456, guid: 047a4e2186600944a8b524e074a50b70,
-        type: 3}
-      propertyPath: m_Name
-      value: TextContainerC
-      objectReference: {fileID: 0}
-    - target: {fileID: 5059177257197975456, guid: 047a4e2186600944a8b524e074a50b70,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5059177257197975459, guid: 047a4e2186600944a8b524e074a50b70,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1055,6 +1045,16 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 5059177257197975456, guid: 047a4e2186600944a8b524e074a50b70,
+        type: 3}
+      propertyPath: m_Name
+      value: TextContainerC
+      objectReference: {fileID: 0}
+    - target: {fileID: 5059177257197975456, guid: 047a4e2186600944a8b524e074a50b70,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5059177257699186406, guid: 047a4e2186600944a8b524e074a50b70,
         type: 3}
       propertyPath: m_text
@@ -1075,16 +1075,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5698236360033545197}
     m_Modifications:
-    - target: {fileID: 5059177257197975456, guid: 047a4e2186600944a8b524e074a50b70,
-        type: 3}
-      propertyPath: m_Name
-      value: TextContainerL
-      objectReference: {fileID: 0}
-    - target: {fileID: 5059177257197975456, guid: 047a4e2186600944a8b524e074a50b70,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5059177257197975459, guid: 047a4e2186600944a8b524e074a50b70,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1205,6 +1195,16 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.9999999
       objectReference: {fileID: 0}
+    - target: {fileID: 5059177257197975456, guid: 047a4e2186600944a8b524e074a50b70,
+        type: 3}
+      propertyPath: m_Name
+      value: TextContainerL
+      objectReference: {fileID: 0}
+    - target: {fileID: 5059177257197975456, guid: 047a4e2186600944a8b524e074a50b70,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5059177257699186406, guid: 047a4e2186600944a8b524e074a50b70,
         type: 3}
       propertyPath: m_text
@@ -1225,16 +1225,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5698236360033545197}
     m_Modifications:
-    - target: {fileID: 5059177257197975456, guid: 047a4e2186600944a8b524e074a50b70,
-        type: 3}
-      propertyPath: m_Name
-      value: TextContainerO
-      objectReference: {fileID: 0}
-    - target: {fileID: 5059177257197975456, guid: 047a4e2186600944a8b524e074a50b70,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5059177257197975459, guid: 047a4e2186600944a8b524e074a50b70,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1340,6 +1330,16 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 5059177257197975456, guid: 047a4e2186600944a8b524e074a50b70,
+        type: 3}
+      propertyPath: m_Name
+      value: TextContainerO
+      objectReference: {fileID: 0}
+    - target: {fileID: 5059177257197975456, guid: 047a4e2186600944a8b524e074a50b70,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5059177257699186406, guid: 047a4e2186600944a8b524e074a50b70,
         type: 3}
       propertyPath: m_text
@@ -1360,16 +1360,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5698236360033545197}
     m_Modifications:
-    - target: {fileID: 5059177257197975456, guid: 047a4e2186600944a8b524e074a50b70,
-        type: 3}
-      propertyPath: m_Name
-      value: TextContainerW
-      objectReference: {fileID: 0}
-    - target: {fileID: 5059177257197975456, guid: 047a4e2186600944a8b524e074a50b70,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5059177257197975459, guid: 047a4e2186600944a8b524e074a50b70,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1475,6 +1465,16 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 5059177257197975456, guid: 047a4e2186600944a8b524e074a50b70,
+        type: 3}
+      propertyPath: m_Name
+      value: TextContainerW
+      objectReference: {fileID: 0}
+    - target: {fileID: 5059177257197975456, guid: 047a4e2186600944a8b524e074a50b70,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 047a4e2186600944a8b524e074a50b70, type: 3}
 --- !u!1 &6304282152206175659 stripped
@@ -1496,16 +1496,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5698236360033545197}
     m_Modifications:
-    - target: {fileID: 5059177257197975456, guid: 047a4e2186600944a8b524e074a50b70,
-        type: 3}
-      propertyPath: m_Name
-      value: TextContainerE (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5059177257197975456, guid: 047a4e2186600944a8b524e074a50b70,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5059177257197975459, guid: 047a4e2186600944a8b524e074a50b70,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1626,6 +1616,16 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.9999999
       objectReference: {fileID: 0}
+    - target: {fileID: 5059177257197975456, guid: 047a4e2186600944a8b524e074a50b70,
+        type: 3}
+      propertyPath: m_Name
+      value: TextContainerE (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5059177257197975456, guid: 047a4e2186600944a8b524e074a50b70,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5059177257699186406, guid: 047a4e2186600944a8b524e074a50b70,
         type: 3}
       propertyPath: m_text
@@ -1646,16 +1646,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5698236360033545197}
     m_Modifications:
-    - target: {fileID: 5059177257197975456, guid: 047a4e2186600944a8b524e074a50b70,
-        type: 3}
-      propertyPath: m_Name
-      value: TextContainerT
-      objectReference: {fileID: 0}
-    - target: {fileID: 5059177257197975456, guid: 047a4e2186600944a8b524e074a50b70,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5059177257197975459, guid: 047a4e2186600944a8b524e074a50b70,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1776,6 +1766,16 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.9999999
       objectReference: {fileID: 0}
+    - target: {fileID: 5059177257197975456, guid: 047a4e2186600944a8b524e074a50b70,
+        type: 3}
+      propertyPath: m_Name
+      value: TextContainerT
+      objectReference: {fileID: 0}
+    - target: {fileID: 5059177257197975456, guid: 047a4e2186600944a8b524e074a50b70,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5059177257699186406, guid: 047a4e2186600944a8b524e074a50b70,
         type: 3}
       propertyPath: m_text
@@ -1796,16 +1796,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5698236360033545197}
     m_Modifications:
-    - target: {fileID: 5059177257197975456, guid: 047a4e2186600944a8b524e074a50b70,
-        type: 3}
-      propertyPath: m_Name
-      value: TextContainerD
-      objectReference: {fileID: 0}
-    - target: {fileID: 5059177257197975456, guid: 047a4e2186600944a8b524e074a50b70,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5059177257197975459, guid: 047a4e2186600944a8b524e074a50b70,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1926,6 +1916,16 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.9999999
       objectReference: {fileID: 0}
+    - target: {fileID: 5059177257197975456, guid: 047a4e2186600944a8b524e074a50b70,
+        type: 3}
+      propertyPath: m_Name
+      value: TextContainerD
+      objectReference: {fileID: 0}
+    - target: {fileID: 5059177257197975456, guid: 047a4e2186600944a8b524e074a50b70,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5059177257699186406, guid: 047a4e2186600944a8b524e074a50b70,
         type: 3}
       propertyPath: m_text
@@ -1946,16 +1946,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5698236360033545197}
     m_Modifications:
-    - target: {fileID: 5059177257197975456, guid: 047a4e2186600944a8b524e074a50b70,
-        type: 3}
-      propertyPath: m_Name
-      value: TextContainerV
-      objectReference: {fileID: 0}
-    - target: {fileID: 5059177257197975456, guid: 047a4e2186600944a8b524e074a50b70,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5059177257197975459, guid: 047a4e2186600944a8b524e074a50b70,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2061,6 +2051,16 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 5059177257197975456, guid: 047a4e2186600944a8b524e074a50b70,
+        type: 3}
+      propertyPath: m_Name
+      value: TextContainerV
+      objectReference: {fileID: 0}
+    - target: {fileID: 5059177257197975456, guid: 047a4e2186600944a8b524e074a50b70,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5059177257699186406, guid: 047a4e2186600944a8b524e074a50b70,
         type: 3}
       propertyPath: m_text
@@ -2081,16 +2081,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5698236360033545197}
     m_Modifications:
-    - target: {fileID: 5059177257197975456, guid: 047a4e2186600944a8b524e074a50b70,
-        type: 3}
-      propertyPath: m_Name
-      value: TextContainerM
-      objectReference: {fileID: 0}
-    - target: {fileID: 5059177257197975456, guid: 047a4e2186600944a8b524e074a50b70,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5059177257197975459, guid: 047a4e2186600944a8b524e074a50b70,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2196,6 +2186,16 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 5059177257197975456, guid: 047a4e2186600944a8b524e074a50b70,
+        type: 3}
+      propertyPath: m_Name
+      value: TextContainerM
+      objectReference: {fileID: 0}
+    - target: {fileID: 5059177257197975456, guid: 047a4e2186600944a8b524e074a50b70,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5059177257699186406, guid: 047a4e2186600944a8b524e074a50b70,
         type: 3}
       propertyPath: m_text
@@ -2216,16 +2216,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5698236360033545197}
     m_Modifications:
-    - target: {fileID: 5059177257197975456, guid: 047a4e2186600944a8b524e074a50b70,
-        type: 3}
-      propertyPath: m_Name
-      value: TextContainerE
-      objectReference: {fileID: 0}
-    - target: {fileID: 5059177257197975456, guid: 047a4e2186600944a8b524e074a50b70,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5059177257197975459, guid: 047a4e2186600944a8b524e074a50b70,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2331,6 +2321,16 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 5059177257197975456, guid: 047a4e2186600944a8b524e074a50b70,
+        type: 3}
+      propertyPath: m_Name
+      value: TextContainerE
+      objectReference: {fileID: 0}
+    - target: {fileID: 5059177257197975456, guid: 047a4e2186600944a8b524e074a50b70,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5059177257699186406, guid: 047a4e2186600944a8b524e074a50b70,
         type: 3}
       propertyPath: m_text
@@ -2351,16 +2351,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5698236360033545197}
     m_Modifications:
-    - target: {fileID: 5059177257197975456, guid: 047a4e2186600944a8b524e074a50b70,
-        type: 3}
-      propertyPath: m_Name
-      value: TextContainerE (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5059177257197975456, guid: 047a4e2186600944a8b524e074a50b70,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5059177257197975459, guid: 047a4e2186600944a8b524e074a50b70,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2481,6 +2471,16 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.9999999
       objectReference: {fileID: 0}
+    - target: {fileID: 5059177257197975456, guid: 047a4e2186600944a8b524e074a50b70,
+        type: 3}
+      propertyPath: m_Name
+      value: TextContainerE (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5059177257197975456, guid: 047a4e2186600944a8b524e074a50b70,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5059177257699186406, guid: 047a4e2186600944a8b524e074a50b70,
         type: 3}
       propertyPath: m_text
@@ -2501,16 +2501,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5698236360033545197}
     m_Modifications:
-    - target: {fileID: 5059177257197975456, guid: 047a4e2186600944a8b524e074a50b70,
-        type: 3}
-      propertyPath: m_Name
-      value: TextContainerP
-      objectReference: {fileID: 0}
-    - target: {fileID: 5059177257197975456, guid: 047a4e2186600944a8b524e074a50b70,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5059177257197975459, guid: 047a4e2186600944a8b524e074a50b70,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2616,6 +2606,16 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 5059177257197975456, guid: 047a4e2186600944a8b524e074a50b70,
+        type: 3}
+      propertyPath: m_Name
+      value: TextContainerP
+      objectReference: {fileID: 0}
+    - target: {fileID: 5059177257197975456, guid: 047a4e2186600944a8b524e074a50b70,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5059177257699186406, guid: 047a4e2186600944a8b524e074a50b70,
         type: 3}
       propertyPath: m_text
@@ -2636,16 +2636,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5698236360033545197}
     m_Modifications:
-    - target: {fileID: 5059177257197975456, guid: 047a4e2186600944a8b524e074a50b70,
-        type: 3}
-      propertyPath: m_Name
-      value: TextContainerA
-      objectReference: {fileID: 0}
-    - target: {fileID: 5059177257197975456, guid: 047a4e2186600944a8b524e074a50b70,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5059177257197975459, guid: 047a4e2186600944a8b524e074a50b70,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2750,6 +2740,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5059177257197975456, guid: 047a4e2186600944a8b524e074a50b70,
+        type: 3}
+      propertyPath: m_Name
+      value: TextContainerA
+      objectReference: {fileID: 0}
+    - target: {fileID: 5059177257197975456, guid: 047a4e2186600944a8b524e074a50b70,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5059177257699186406, guid: 047a4e2186600944a8b524e074a50b70,
         type: 3}

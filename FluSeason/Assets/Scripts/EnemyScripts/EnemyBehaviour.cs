@@ -88,7 +88,7 @@ public class EnemyBehaviour : MonoBehaviour
 
         this.transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, angle));
 
-        this.transform.position = Vector3.MoveTowards(this.transform.position, player.position, moveSpeed * Time.deltaTime);
+        this.transform.position = Vector3.MoveTowards(this.transform.position, player.transform.position, moveSpeed * Time.deltaTime);
     }
 
     IEnumerator AttackCoroutine(float range)
@@ -103,25 +103,6 @@ public class EnemyBehaviour : MonoBehaviour
         }
 
         isAttacking = false;
-    }
-
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        //Debug.Log(collision.gameObject.name);
-        /*if (collision.collider.CompareTag("Enemy"))
-        {
-
-            Vector3 pos = rb.position - collision.rigidbody.position;
-            pos.Normalize();
-            rb.AddForce(pos * repelForce);
-
-        }*/
-
-        //if (collision.collider.CompareTag("Bullet"))
-        //{
-        //    Debug.Log("DIE");
-        //}
     }
 
     protected virtual void OnTriggerEnter(Collider other)
@@ -145,5 +126,15 @@ public class EnemyBehaviour : MonoBehaviour
             }
         }
         
+    }
+
+
+    private void OnCollisionExit(Collision collision)
+    {
+        print("stop");
+        if (collision.gameObject.CompareTag("Walkthrough")) {
+            this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, -.5f);
+            rb.constraints = RigidbodyConstraints.FreezePositionZ;
+        }
     }
 }

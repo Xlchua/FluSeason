@@ -11,6 +11,9 @@ TagManager:
   - StreamUpgrade
   - OPUpgrade
   - EnemyBullet
+  - Wall
+  - Ground
+  - Walkthrough
   layers:
   - Default
   - TransparentFX

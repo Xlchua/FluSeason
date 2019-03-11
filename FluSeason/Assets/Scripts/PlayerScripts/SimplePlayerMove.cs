@@ -58,13 +58,14 @@ public class SimplePlayerMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         if (GameManagement.instance.isUpgradeSpawned())
         {
             upgradePointer.gameObject.SetActive(true);
         }
 
 
-        direction = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+        direction = new Vector3(Input.GetAxis("Horizontal") * 2, Input.GetAxis("Vertical") * 2, .1f);
 
         Look();
         //transform.Translate(direction * moveSpeed * Time.deltaTime);
@@ -77,7 +78,7 @@ public class SimplePlayerMove : MonoBehaviour
             if(!isBulletSpawning)
                 StartShooting();
         }
-        
+
     }
 
     private void FixedUpdate()
@@ -208,6 +209,35 @@ public class SimplePlayerMove : MonoBehaviour
     private void PlayGunshot()
     {
         audioSource.PlayOneShot(BB_sound, 0.05f);
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Wall"))
+        {
+            rb.constraints = RigidbodyConstraints.FreezePositionZ;
+            this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, -.5f);
+        }
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            rb.constraints = RigidbodyConstraints.FreezePositionZ;
+            this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, -.5f);
+        }
+    }
+
+    private void OnCollisionStay(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Wall"))
+        {
+            rb.constraints = RigidbodyConstraints.FreezePositionZ;
+            this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, -.5f);
+        }
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+
+            rb.constraints = RigidbodyConstraints.FreezePositionZ;
+            this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, -.5f);
+        }
     }
 
     private void OnTriggerEnter(Collider collider)

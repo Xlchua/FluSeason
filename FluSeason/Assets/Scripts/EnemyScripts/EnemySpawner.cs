@@ -35,6 +35,9 @@ public class EnemySpawner : MonoBehaviour
 
     //public IntUnityEvent enemyLeft = new IntUnityEvent();
 
+    //Audio Purposes
+     public AudioClip PowerUp;
+
     void Awake()
     {
         if (instance == null)
@@ -94,6 +97,7 @@ public class EnemySpawner : MonoBehaviour
                 {
                     Instantiate(upgrades[upgradeToSpawn], centerSpawn.position, Quaternion.identity);
                     GameManagement.instance.toggleUpgradeSpawned(); //should set to true
+                    AudioManager.instance.PlaySingle(PowerUp);
                 }
 
                 GameManagement.instance.UpdateWave();

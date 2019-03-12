@@ -179,6 +179,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5547794464328031531, guid: 78a15c015cf8bf0409147fdfbd9b015e,
+        type: 3}
+      propertyPath: GOAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: 8311f77443fbb4fcda1fd0240b5268b8, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 78a15c015cf8bf0409147fdfbd9b015e, type: 3}
 --- !u!4 &46520696 stripped
@@ -2500,6 +2505,11 @@ PrefabInstance:
       propertyPath: enemiesIncreasePerWave
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 8382337201957235115, guid: da4a6eb41855c4f57bffab6fa9ea624e,
+        type: 3}
+      propertyPath: PowerUp
+      value: 
+      objectReference: {fileID: 8300000, guid: 6a2653ff061a54efda2a4270fbac16fb, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da4a6eb41855c4f57bffab6fa9ea624e, type: 3}
 --- !u!4 &1403230022 stripped
@@ -3089,6 +3099,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: d13f4f67042d0fd4aaefc238cfb5cac8, type: 2}
+    - target: {fileID: 5703683569907876963, guid: c1f68d1c1844f4ee1a090393fd84d6ae,
+        type: 3}
+      propertyPath: UPG_taken
+      value: 
+      objectReference: {fileID: 8300000, guid: 8bebc382d3295420e89f0376b27a26a1, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1f68d1c1844f4ee1a090393fd84d6ae, type: 3}
 --- !u!1 &2031978942 stripped
@@ -3423,6 +3438,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 167905432494854008, guid: 2e10638b7d88c444fb458e01935dd2d6,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -13.97998
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2e10638b7d88c444fb458e01935dd2d6, type: 3}

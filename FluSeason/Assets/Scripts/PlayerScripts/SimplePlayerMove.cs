@@ -30,6 +30,7 @@ public class SimplePlayerMove : MonoBehaviour
 
     //Audio Purposes
     public AudioClip BB_sound;
+    public AudioClip UPG_taken;
 
     //Used for stream bullet
     private float interval = 1.4f;
@@ -211,6 +212,11 @@ public class SimplePlayerMove : MonoBehaviour
         audioSource.PlayOneShot(BB_sound, 0.05f);
     }
 
+    private void PlayGunTaken()
+    {
+        AudioManager.instance.PlaySingle(UPG_taken);
+    }
+
 
     private void OnTriggerEnter(Collider collider)
     {
@@ -220,6 +226,7 @@ public class SimplePlayerMove : MonoBehaviour
             bulletType = "FastSingleBullet";
             bulletSpawnInterval = 0.115f;
             Destroy(collider.gameObject);
+            PlayGunTaken();
         }
 
         if(collider.CompareTag("SpreadUpgrade"))
@@ -228,6 +235,7 @@ public class SimplePlayerMove : MonoBehaviour
             bulletType = "SpreadBullet";
             bulletSpawnInterval = 0.05f;
             Destroy(collider.gameObject);
+            PlayGunTaken();
         }
 
         if (collider.CompareTag("StreamUpgrade"))
@@ -236,6 +244,7 @@ public class SimplePlayerMove : MonoBehaviour
             bulletType = "StreamBullet";
             bulletSpawnInterval = 0.035f;
             Destroy(collider.gameObject);
+            PlayGunTaken();
         }
 
         if (collider.CompareTag("OPUpgrade"))
@@ -244,6 +253,7 @@ public class SimplePlayerMove : MonoBehaviour
             bulletType = "OPBullet";
             bulletSpawnInterval = 0.05f;
             Destroy(collider.gameObject);
+            PlayGunTaken();
         }
 
         if(collider.CompareTag("EnemyBullet"))
@@ -252,6 +262,6 @@ public class SimplePlayerMove : MonoBehaviour
             PlayerManager.instance.addInfection(v);
             Destroy(collider.gameObject);
         }
-
+        
     }
 }

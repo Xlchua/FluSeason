@@ -211,34 +211,6 @@ public class SimplePlayerMove : MonoBehaviour
         audioSource.PlayOneShot(BB_sound, 0.05f);
     }
 
-    void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Wall"))
-        {
-            rb.constraints = RigidbodyConstraints.FreezePositionZ;
-            this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y);
-        }
-        if (collision.gameObject.CompareTag("Ground"))
-        {
-            rb.constraints = RigidbodyConstraints.FreezePositionZ;
-            this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y);
-        }
-    }
-
-    private void OnCollisionStay(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Wall"))
-        {
-            rb.constraints = RigidbodyConstraints.FreezePositionZ;
-            this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y);
-        }
-        if (collision.gameObject.CompareTag("Ground"))
-        {
-
-            rb.constraints = RigidbodyConstraints.FreezePositionZ;
-            this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y);
-        }
-    }
 
     private void OnTriggerEnter(Collider collider)
     {

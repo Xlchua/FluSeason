@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 704642868037656258}
   - component: {fileID: 626819501500619743}
   - component: {fileID: 4365678956107365676}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -123,7 +123,7 @@ GameObject:
   - component: {fileID: 3972669725899903425}
   - component: {fileID: 4054139073403343236}
   - component: {fileID: 6175762580467899510}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -197,7 +197,7 @@ GameObject:
   - component: {fileID: 9214099481260202830}
   - component: {fileID: 4686110821254246444}
   - component: {fileID: 4167170053680649482}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: HealthBG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -275,7 +275,7 @@ GameObject:
   - component: {fileID: 3812512475121991162}
   - component: {fileID: 4374309760146427702}
   - component: {fileID: 8733476136859220364}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SpeedyEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -380,7 +380,7 @@ Rigidbody:
   m_GameObject: {fileID: 7203807645139615242}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0
+  m_Drag: 1
   m_AngularDrag: 0.05
   m_UseGravity: 0
   m_IsKinematic: 1
@@ -410,7 +410,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7110401161058750307}
   - component: {fileID: 3554186426992708989}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ICS 161 Sprites_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}

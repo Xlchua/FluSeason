@@ -128,14 +128,4 @@ public class EnemyBehaviour : MonoBehaviour
         }
         
     }
-
-
-    private void OnCollisionExit(Collision collision)
-    {
-        print("stop");
-        if (collision.gameObject.CompareTag("Walkthrough")) {
-            this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, -.5f);
-            rb.constraints = RigidbodyConstraints.FreezePositionZ;
-        }
-    }
 }
